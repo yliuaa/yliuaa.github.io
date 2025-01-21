@@ -1,10 +1,10 @@
 ---
 title:          "Modality Interactive Mixture-of-Experts for Fake News Detection"
-date:           2024-11-1 00:01:00 +0800
+date:           2025-01-21 00:01:00 +0800
 selected:       true
 # pub:            "International Conference on Learning Representations (ICLR)"
 # pub_pre:        "Submitted to "
-pub_post:       'Accepted by the Proceedings of the ACM Web Conference 2024'
+pub_post:       'The Web Conference 2025'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
 pub_date:       "2025"
 
@@ -14,8 +14,11 @@ cover:          /assets/images/covers/MIMoE-FND2024.png
 authors:
   - Yifan Liu
   - Yaokun Liu
+  - Zelin Li
+  - Ruichen Yao
   - Yang Zhang
   - Dong Wang
+
 links:
   # Code: https://github.com/luost26/bubble-visual-hash
   # Demo: https://luost26.github.io/bubble-visual-hash
