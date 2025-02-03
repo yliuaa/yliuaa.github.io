@@ -20,6 +20,6 @@ authors:
   - Dong Wang
 
 links:
-  Code: https://github.com/yliuaa/MIMoE-FND.git
   Paper: https://arxiv.org/abs/2501.12431 
+  Code: https://github.com/yliuaa/MIMoE-FND.git
 ---
