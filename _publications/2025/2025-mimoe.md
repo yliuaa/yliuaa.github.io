@@ -20,6 +20,6 @@ authors:
   - Dong Wang
 
 links:
-  # Code: https://github.com/luost26/bubble-visual-hash
-  # Demo: https://luost26.github.io/bubble-visual-hash
+  Code: https://github.com/yliuaa/MIMoE-FND.git
+  Paper: https://arxiv.org/abs/2501.12431 
 ---
