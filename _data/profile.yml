@@ -4,7 +4,7 @@ navbar_name: "Yifan Liu"
 
 positions:
 - logo: /assets/images/badges/uiuc_logo.png  # Logo is optional
-  name: 2nd Year PhD Student at UIUC
+  name: 3rd Year PhD Student at UIUC
 # - name: Position 2 without logo
 
 
@@ -23,12 +23,11 @@ orcid: 0009-0003-6658-8089
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    Hi! I'm a second-year PhD student Information Sciences supervised by <a href="https://www.wangdong.org/"
+    Hi! I'm a third-year PhD student Information Sciences supervised by <a href="https://www.wangdong.org/"
     target="_blank">Prof. Dong Wang</a> at University of Illinois Urbana-Champaign. Prior to that, I graduated with M.S.
-    Computer Science from Georgia Institute of Technology supervised by Prof. Harish Ravichandar and BSc Computer Science (Hons) from University College London.  </p>
+    Computer Science from Georgia Institute of Technology and BSc Computer Science (Hons) from University College London.  </p>
   <p>
-    My research interest lies in the trustworthiness of machine learning in a wide range of applications such as NLP,
-    Information Retrieval and social media analysis. 
+    My research interest lies in the intersection of multimodal learning and information retrieval.
   </p>
 portrait_url: /assets/images/photos/myself25.jpg
 portrait_caption: >-
