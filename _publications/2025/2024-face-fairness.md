@@ -19,7 +19,7 @@ authors:
   - Zelin Li
   - Dong Wang
 links:
-  # Paper: https://arxiv.org/abs/2408.15406 
+  Paper: https://dl.acm.org/doi/10.1145/3715275.3732066 
   Code: https://github.com/yliuaa/BNMR-FairCompFace.git
   # Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
 ---
