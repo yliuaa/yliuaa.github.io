@@ -1,0 +1,34 @@
+{% assign p = include.item %}
+
+<div class="pub-line">
+  <!-- 标题 -->
+  <div class="title"><strong>{{ p.title }}</strong></div>
+
+  <!-- 作者（保留 * 标注） -->
+  <div class="meta">
+    {% include widgets/author_list.html authors=p.authors %}
+  </div>
+
+  <!-- venue / 年份 + equal contribution -->
+  {% if p.pub or p.pub_date or p.pub_pre or p.pub_post or p.pub_last %}
+    <div class="venue">
+      {% if p.pub_pre %}{{ p.pub_pre }}{% endif %}
+      {% if p.pub %}<i>{{ p.pub }}</i>{% endif %}
+      {% if p.pub_post %}{{ p.pub_post }}{% endif %}
+      {% if p.pub_date %} · {{ p.pub_date }}{% endif %}
+      {% if p.pub_last %} · {{ p.pub_last }}{% endif %}
+    </div>
+  {% endif %}
+
+  {% if p.links %}
+    <div class="links" style="margin-top:.2rem">
+      {% for link in p.links %}
+        {% if link[1].url %}
+          <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>
+        {% else %}
+          <a target="_blank" href="{{ link[1] }}">[{{ link[0] }}]</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

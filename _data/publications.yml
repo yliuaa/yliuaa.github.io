@@ -1,0 +1,120 @@
+- id: preprint1
+  title: "Learning Decomposed Token Representations for Generative Recommendation"
+  authors:
+    - Yifan Liu
+    - Yaokun Liu
+    - Zelin Li
+    - Ruichen Yao
+    - Yang Zhang
+    - Dong Wang
+  pub: "Preprint under review"
+  pub_date: 2025
+  year: 2025
+  # links:
+  #   Paper: https://arxiv.org/abs/2345.6789
+  type: preprint
+
+
+- id: preprint2
+  title: "Session-based Recommendation with Validated and Enriched LLM Intents"
+  authors:
+    - Gyuseok Lee
+    - Yaokun Liu
+    - Yifan Liu
+    - Susik Yoon
+    - Dong Wang
+    - SeongKu Kang
+  pub: "Preprint under review"
+  pub_date: 2024
+  year: 2025
+  links:
+    Paper: https://arxiv.org/abs/2508.00570
+  type: preprint
+
+
+- id: preprint3
+  title: "Structural Tokenization for Generative Recommendation"
+  authors:
+    - Yaokun Liu*
+    - Yifan Liu*
+    - Zhenrui Yue
+    - Gyuseok Lee
+    - Zelin Li
+    - Ruichen Yao
+    - Dong Wang
+  pub: "Preprint under review"
+  pub_date: 2025
+  year: 2025
+  # links:
+  #   Paper: https://arxiv.org/abs/2345.6789
+  type: preprint
+
+
+- id: pub1
+  title: "Component-Based Fairness in Face Attribute Classification with Bayesian Network-informed Meta Learning"
+  authors:
+    - Yifan Liu
+    - Ruichen Yao
+    - Yaokun Liu
+    - Zelin Li
+    - Dong Wang
+  # abstract: "We focus on face component fairness, a fairness notion defined by biological face features..."
+  pub: "The ACM Conference on Fairness, Accountability, and Transparency (FAccT)"
+  pub_date: 2025
+  year: 2025
+  cover: /assets/images/covers/facefairness2024.png
+  links:
+    Paper: https://dl.acm.org/doi/10.1145/3715275.3732066
+    Code: https://github.com/yliuaa/BNMR-FairCompFace.git
+  selected: true
+  type: conference
+
+- id: pub2
+  title: "Modality Interactive Mixture-of-Experts for Fake News Detection"
+  authors:
+    - Yifan Liu
+    - Yaokun Liu
+    - Zelin Li
+    - Ruichen Yao
+    - Yang Zhang
+    - Dong Wang
+  pub: "The ACM Web Conference (WWW)"
+  pub_date: 2025
+  year: 2025
+  cover: /assets/images/covers/MIMoE-FND2024.png
+  links:
+    Paper: https://arxiv.org/abs/2501.12431
+    code: https://github.com/yliuaa/MIMoE-FND.git
+  selected: true
+  type: conference
+
+- id: pub3
+  title: "The Effects of Robot Motion on Comfort Dynamics of Novice Users in Close-Proximity Human-Robot Interaction"
+  authors:
+    - Pierce Howell
+    - Jack Kolb*
+    - Yifan Liu*
+    - Harish Ravichandar
+  pub: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)"
+  pub_date: 2023
+  year: 2023
+  cover: /assets/images/covers/iros2023.png
+  links:
+    Paper: https://arxiv.org/pdf/2308.01466
+  selected: false
+  type: conference
+
+- id: pub4
+  title: "Intertwined Biases Across Social Media Spheres: Unpacking Correlations in Media Bias Dimensions"
+  authors:
+    - Yifan Liu
+    - Yike Li
+    - Dong Wang
+  pub: "International Conference on Advances in Social Networks Analysis and Mining (ASONAM)"
+  pub_date: 2024
+  year: 2024
+  cover: /assets/images/covers/mediabias2024.png
+  links:
+    Paper: https://arxiv.org/abs/2408.15406 
+  selected: true
+  type: conference

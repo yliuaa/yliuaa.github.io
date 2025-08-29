@@ -1,32 +1,101 @@
 ---
 layout: default
-title : Publications
-navbar_title: Publications
-body_attr: >-
-  data-spy="scroll" data-target="#navbar-year" data-offset="100"
+title: Publications
+permalink: /publications
 ---
 
-{% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
+<div class="main-narrow">
+  <section class="section" style="display:flex; align-items:baseline; justify-content:space-between; gap:1rem;">
+  <div>
+    <h1 style="font-size:1.6rem;margin:0 0 .25rem">Publications</h1>
+    <p class="muted" style="margin:0">Preprints and peer-reviewed papers grouped by year.</p>
+  </div>
 
-<div class="row">
-    <div class="col-12 col-lg-10">
-        {% for year in pubs_by_year %}
-        {% assign num_papers = year.items | size %}
-        <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
-        <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
-            {% for item in year.items %}
-                {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
-            {% endfor %}
-        </div>
-        {% endfor %}
-    </div>
+  <!-- back to home -->
+  <a class="backlink" href="{{ '/' | relative_url }}">← Home</a>
+</section>
 
-    <div class="col-2 d-none d-lg-block">
-        <div id="navbar-year" class="nav nav-pills flex-column sticky-top" style="top: 80px">
-            {% for year in pubs_by_year %}
-            <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
-            {% endfor %}
-        </div>
-    </div>
+  <!-- <section class="section">
+    <h1 style="font-size:1.6rem;margin:0 0 .25rem">Publications</h1>
+    <p class="muted" style="margin:0">Preprints first, then peer-reviewed papers grouped by year.</p>
+  </section> -->
+
+  {%- comment -%}
+    读取数据并归一化为数组（防呆：字典/空都可）
+  {%- endcomment -%}
+  {% assign pubs_src = site.data.publications %}
+  {% if pubs_src == nil %}
+    {% assign pubs_src = "" | split: "" %}
+  {% endif %}
+
+  {%- comment -%}
+    无论 pubs_src 是数组还是字典，这里统一拉平成数组：
+    - 若 item 是 [key, value]（字典对），则取 value
+    - 若 item 已是对象（正常数组），则直接 push
+  {%- endcomment -%}
+  {% assign pubs_all = "" | split: "" %}
+  {% for item in pubs_src %}
+    {% if item[1] %}
+      {% assign pubs_all = pubs_all | push: item[1] %}
+    {% else %}
+      {% assign pubs_all = pubs_all | push: item %}
+    {% endif %}
+  {% endfor %}
+
+  {%- comment -%}
+    拆分：preprints 与 非 preprints
+  {%- endcomment -%}
+  {% assign preprints = pubs_all | where_exp: "p", "p.type == 'preprint'" %}
+  {% assign non_preprints = pubs_all | where_exp: "p", "p.type != 'preprint'" %}
+
+  {%- comment -%}
+    排序：按 pub_date 降序（需要可改 year）
+  {%- endcomment -%}
+  {% assign preprints_sorted = preprints | sort: "pub_date" | reverse %}
+  {% assign pubs_sorted = non_preprints | sort: "pub_date" | reverse %}
+
+  {%- if preprints_sorted and preprints_sorted.size > 0 -%}
+    <!-- Preprints 区 -->
+    <section class="section" id="preprints">
+      <h2>Preprints</h2>
+      {% for p in preprints_sorted %}
+        {% include widgets/pub_line_item.html item=p %}
+      {% endfor %}
+    </section>
+  {%- endif -%}
+
+  {%- comment -%}
+    年份分组（非 preprints）
+  {%- endcomment -%}
+  {% assign groups = "" | split: "" %}
+  {% for p in pubs_sorted %}
+    {% assign y = "" %}
+    {% if p.pub_date %}{% assign y = p.pub_date | date: "%Y" %}{% endif %}
+    {% if y == '1970' or y == '1969' or y == '' %}{% assign y = p.year %}{% endif %}
+    {% if y == "" %}{% assign y = "Unknown" %}{% endif %}
+    {% unless groups contains y %}
+      {% assign groups = groups | push: y %}
+    {% endunless %}
+  {% endfor %}
+  {% assign groups_sorted = groups | sort | reverse %}
+
+  {% for y in groups_sorted %}
+    <section class="section" id="y{{ y }}">
+      <h2>{{ y }}</h2>
+      {% for p in pubs_sorted %}
+        {% assign yy = "" %}
+        {% if p.pub_date %}{% assign yy = p.pub_date | date: "%Y" %}{% endif %}
+        {% if yy == '1970' or yy == '1969' or yy == '' %}{% assign yy = p.year %}{% endif %}
+        {% if yy == "" %}{% assign yy = "Unknown" %}{% endif %}
+        {% if yy == y %}
+          {% include widgets/pub_min_item.html item=p %}
+        {% endif %}
+      {% endfor %}
+    </section>
+  {% endfor %}
+
+  <section class="section" style="margin-top:28px">
+    <a class="muted" href="#top">↑ Back to top</a>
+  </section>
 
 </div>

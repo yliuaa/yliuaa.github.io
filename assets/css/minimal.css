@@ -1,0 +1,275 @@
+:root{
+  --page-max: 800px;
+  --fg: #111;
+  --muted: #6b7280;        /* 灰色元信息 */
+  --link: #2563eb;         /* 链接蓝 */
+}
+
+html, body { color: var(--fg); }
+
+/* 单栏居中容器 */
+.main-narrow{
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0px 20px 64px;
+}
+
+/* 区块间距 */
+.section{ margin: 28px 0; }
+.section h2{ font-size:1.25rem; margin:0 0 .5rem; font-weight:600; }
+
+.lead{ font-size:1.05rem; line-height:1.65; }
+.muted{ color:var(--muted); }
+
+a{ color:var(--link); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+/* 顶部名片 */
+.hero h1{ font-size:1.85rem; margin:0 0 .25rem; font-weight:700; }
+.hero .contact{ font-family:ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+/* Updates 列表 */
+.updates{ margin:.25rem 0 0; padding-left:1.1rem; }
+.updates li{ margin:.25rem 0; }
+.updates time{ color:var(--muted); margin-right:.5rem; }
+
+/* 紧凑出版物条目（无卡片无分割线） */
+.pub-item{
+  display:flex; gap:.75rem; align-items:flex-start;
+  margin:14px 0;
+}
+.pub-item .thumb{
+  width:120px; flex:0 0 auto; border-radius:8px; overflow:hidden;
+}
+.pub-item .thumb img{ display:block; width:100%; height:auto; }
+.pub-item h3{ font-size:1rem; line-height:1.35; margin:0 0 .15rem; font-weight:600; }
+.pub-item .meta{ font-size:.9rem; color:var(--muted); margin:.15rem 0 .35rem; }
+.links a{ margin-right:.5rem; }
+
+.pub-item.no-thumb{ gap:0; }
+.pub-item.no-thumb .content{ width:100%; }
+
+.clamp-2{
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+
+.bg-white.shadow-sm.rounded-sm{ box-shadow:none !important; }
+.border-bottom.border-gray{ border-bottom:0 !important; }
+
+/* Preprints 极简条目 */
+.pub-line { margin: 10px 0; }
+.pub-line .title { font-size: 0.98rem; line-height: 1.35; margin: 0 0 .1rem; }
+.pub-line .meta { font-size: .9rem; color: var(--muted); margin: 0 0 .2rem; }
+.pub-line .links a { margin-right: .5rem; font-size: .9rem; }
+
+
+
+/* Section headers like "Preprints", "Selected Publications" */
+.section > h2 {
+  font-size: 1.4rem;        /* bigger than paper titles */
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem; /* extra spacing above and below */
+  color: #333;              /* darker than muted, lighter than black */
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.25rem;
+}
+
+
+/* --- Updates: compact timeline + bug fix (hide native bullets) --- */
+.updates,
+.updates li {
+  list-style: none !important;   /* kill default bullets in all themes */
+  margin-left: 0;
+}
+
+/* hide marker in modern browsers (Safari/Firefox/Chromium) */
+.updates li {
+  position: relative;
+  padding-left: 0rem;          /* gap between line and text */
+  margin: 0 0 0.45rem 0;         /* tighter vertical spacing */
+  font-size: 0.85rem;
+  line-height: 1.2;
+  color: #555;
+}
+
+/* date styling */
+.updates time {
+  font-family: monospace;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  color: #333;
+}
+
+.pub-item .venue,
+.pub-line .venue {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.1rem;
+}
+
+/* unify publication link font size */
+.pub-item .links a,
+.pub-line .links a {
+  font-size: 0.85rem;
+}
+
+.pub-item .thumb {
+  width: 160px !important;     /* 统一宽度 */
+  height: 90px !important;    /* 统一高度（3:2） */
+  flex: 0 0 160px !important;
+  border-radius: 6px;
+  overflow: hidden;            /* 裁掉图片四角 */
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.14) !important;  /* 阴影加在容器上 */
+}
+
+.pub-item .thumb img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;           /* 填满且不变形 */
+  display: block;
+  box-shadow: none !important; /* 防止旧样式给 img 设了阴影/无阴影 */
+  border-radius: 0;            /* 由容器负责圆角 */
+}
+
+/* 可选：悬停阴影更深一点 */
+.pub-item .thumb:hover {
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18) !important;
+}
+
+h2 .see-all {
+  font-size: 0.85rem;
+  font-weight: normal;
+  margin-left: 0.75rem;
+  text-decoration: none;
+}
+
+h2 .see-all:hover {
+  text-decoration: underline;
+}
+
+
+
+.edu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.edu-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.edu-logo {
+  width: 28px;
+  height: 28px;
+  margin-right: 0.6rem;
+  object-fit: contain;
+}
+
+.edu-text .edu-school {
+  font-size: 1rem;
+}
+
+.edu-text .edu-degree {
+  font-size: 0.9rem;
+}
+
+.edu-text .edu-date {
+  font-size: 0.85rem;
+}
+
+.cat-gallery {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.cat-item {
+  max-width: 180px;
+}
+
+.cat-photo {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.cat-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 名字 overlay，默认隐藏 */
+.cat-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.3rem 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* 悬停时显示 */
+.cat-photo:hover .cat-name {
+  opacity: 1;
+}
+
+
+.portrait-box {
+  position: relative;
+  width: 180px;   /* 可以调大一点，例如 200px */
+  height: 180px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.portrait-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Caption overlay，默认隐藏 */
+.portrait-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0.3rem 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 0 0 12px 12px; /* 圆角和图片对齐 */
+}
+
+/* 悬停时显示 */
+.portrait-box:hover .portrait-caption {
+  opacity: 1;
+}
+
+h1 .alt-name {
+  font-size: 0.7em;   /* 比英文小一点 */
+  font-weight: normal;
+  margin-left: .3rem;
+  color: #666;        /* 灰色 */
+}

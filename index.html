@@ -1,30 +1,197 @@
 ---
 layout: default
-title : Homepage
-navbar_title: Home
+title: Home
 ---
-{% include widgets/profile_card.html %}
 
-{% include widgets/debug_repo_name.html %}
+{% assign P = site.data.profile %}
 
-{% include widgets/debug_url.html %}
+<div class="main-narrow">
 
-{% if site.data.display.homepage.show_experience %}
-    {% include widgets/experience_card.html %}
-{% endif %}
+      <!-- 顶部名片：头像在左 -->
+  <section class="section hero" style="display:flex; align-items:flex-start; gap:1.5rem;">
 
-{% if site.data.display.homepage.show_news %}
-    {% assign count_news = site.news | size %}
-    {% if count_news > 0 %}
-        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
+    <!-- 左侧头像 -->
+    {% if P.portrait_url %}
+      <div class="portrait-box">
+        <img src="{{ P.portrait_url | relative_url }}" alt="{{ P.primary_name }}">
+        {% if P.portrait_caption %}
+          <div class="portrait-caption">{{ P.portrait_caption }}</div>
+        {% endif %}
+      </div>
     {% endif %}
-{% endif %}
 
-{% if site.data.display.homepage.show_selected_publications %}
-    {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
-    {% 
-        include widgets/publication_card.html 
-        publications=pubs
-        title='<i class="fas fa-star"></i> Selected Publications'
-    %}
-{% endif %}
+    <!-- 右侧信息 -->
+    <div class="info" style="flex:1;">
+      <h1 style="margin-top:0">
+        {{ P.primary_name }}
+        {% if P.secondary_name %}
+          <span class="alt-name">{{ P.secondary_name }}</span>
+        {% endif %}
+      </h1>
+
+      {% if P.email %}
+      <div class="contact muted">
+        {{ P.email | replace: "@"," [at] " | replace: "."," [dot] " }}
+      </div>
+      {% endif %}
+
+      <div class="links" style="margin-top:.35rem">
+        {% assign sep = '' %}
+        {% if P.linkedin %}
+          {{ sep }}<a href="{{ P.linkedin }}" target="_blank">LinkedIn</a>
+          {% assign sep = ' · ' %}
+        {% endif %}
+        {% if P.github %}
+          {{ sep }}<a href="{{ P.github }}" target="_blank">GitHub</a>
+          {% assign sep = ' · ' %}
+        {% endif %}
+        {% if P.scholar %}
+          {{ sep }}<a href="{{ P.scholar }}" target="_blank">Google Scholar</a>
+          {% assign sep = ' · ' %}
+        {% endif %}
+        {% if P.orcid %}
+          {{ sep }}<a href="{{ P.orcid }}" target="_blank">ORCID</a>
+          {% assign sep = ' · ' %}
+        {% endif %}
+        {% if P.twitter %}
+          {{ sep }}<a href="{{ P.twitter }}" target="_blank">X</a>
+          {% assign sep = ' · ' %}
+        {% endif %}
+        {% if P.cv_link %}
+          {{ sep }}<a href="{{ P.cv_link }}" target="_blank">CV</a>
+          {% assign sep = ' · ' %}
+        {% endif %}
+      </div>
+
+      {% if P.short_bio %}
+        <div class="lead" style="margin-top:.75rem">
+          {{ P.short_bio }}
+        </div>
+      {% endif %}
+
+      {% if P.positions and P.positions.size > 0 %}
+        <div class="muted" style="margin-top:.25rem">
+          {% for pos in P.positions %}
+            {% if pos.logo %}
+              <img src="{{ pos.logo | relative_url }}" alt="" style="height:18px; vertical-align:-3px; margin-right:.35rem">
+            {% endif %}
+            {{ pos.name }}{% unless forloop.last %} · {% endunless %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Updates（仍来自 _data/updates.yml） -->
+  <section class="section">
+    <h2>Updates</h2>
+    <ul class="updates">
+      {% for u in site.data.updates limit:6 %}
+        <li><time>{{ u.date }}</time>{{ u.text }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <!-- Preprints（从 _data/publications.yml 里取 type: preprint；兼容 GitHub Pages） -->
+  <section class="section">
+    <h2>Preprints</h2>
+
+    {%- assign preprints = site.data.publications | where: "type", "preprint" -%}
+
+    {%- assign preprints_sorted = preprints | sort: "pub_date" | reverse -%}
+    {%- assign preprints_top = preprints_sorted | slice: 0, 3 -%}
+
+    {%- for p in preprints_top -%}
+      {% include widgets/pub_line_item.html item=p %}
+    {%- endfor -%}
+
+    {%- if preprints_sorted.size > preprints_top.size -%}
+      <div style="margin-top:.25rem">
+        <a href="{{ 'publications' | relative_url }}">See more →</a>
+      </div>
+    {%- endif -%}
+  </section>
+
+  <!-- 精选 Publications（仍来自 _data/publications.yml；紧凑条目） -->
+  <section class="section">
+  <h2>
+    Selected Publications
+    <!-- <a href="{{ 'publications' | relative_url }}" class="see-all">(all publications)</a> -->
+    <a href="{{ site.data.profile.scholar }}" class="see-all" target="_blank" rel="noopener">
+        (See all on Google Scholar)
+      </a>
+  </h2>
+  {% assign pubs = site.data.publications | where_exp:"p","p.selected == true" | slice: 0, 3 %}
+  {% for p in pubs %}
+    {% include widgets/pub_min_item.html item=p %}
+  {% endfor %}
+  </section>
+
+
+  <!-- Education（改为读取 profile.yml） -->
+  {% if P.education %}
+  <section class="section">
+    <h2>Education</h2>
+    <ul class="edu-list">
+      {% for e in P.education %}
+        <li class="edu-item">
+          {% if e.logo %}
+            <img src="{{ e.logo | relative_url }}" alt="{{ e.name }} logo" class="edu-logo">
+          {% endif %}
+          <div class="edu-text">
+            <div class="edu-school"><strong>{{ e.name }}</strong></div>
+            <div class="edu-degree muted">{{ e.position }}</div>
+            {% if e.date %}
+              <div class="edu-date muted"><em>{{ e.date }}</em></div>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <!-- 可选：Awards（读取 profile.yml） -->
+  {% if P.awards and P.awards.size > 0 %}
+  <section class="section">
+    <h2>Awards</h2>
+    <ul class="updates">
+      {% for a in P.awards %}
+        <li><strong>{{ a.name }}</strong>{% if a.date %} <span class="muted">· {{ a.date }}</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if P.service %}
+  <section class="section">
+    <h2>Service</h2>
+    <ul>
+      {% for s in P.service %}
+        <li>
+          <strong>{{ s.role }}:</strong>
+          {% if s.venues %}
+            {{ s.venues | join: ", " }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if P.cats %}
+  <section class="section">
+    <h2>My Cats 🐾</h2>
+    <div class="cat-gallery">
+      {% for c in P.cats %}
+        <div class="cat-item">
+          <div class="cat-photo">
+            <img src="{{ c.photo | relative_url }}" alt="{{ c.name }}">
+            <div class="cat-name">{{ c.name }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+</div>
