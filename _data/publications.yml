@@ -84,7 +84,7 @@
   cover: /assets/images/covers/MIMoE-FND2024.png
   links:
     Paper: https://arxiv.org/abs/2501.12431
-    code: https://github.com/yliuaa/MIMoE-FND.git
+    Code: https://github.com/yliuaa/MIMoE-FND.git
   selected: true
   type: conference
 
@@ -116,5 +116,25 @@
   cover: /assets/images/covers/mediabias2024.png
   links:
     Paper: https://arxiv.org/abs/2408.15406 
+  selected: true
+  type: conference
+
+- id: pub5
+  title: "Anti-Tamper Protection for Unauthorized Individual Image Generation"
+  authors:
+    - Zelin Li
+    - Ruohan Zong
+    - Yifan Liu
+    - Ruichen Yao
+    - Yaokun Liu
+    - Yang Zhang
+    - Dong Wang
+  pub: "International Conference on Computer Vision (ICCV)"
+  pub_date: 2025
+  year: 2025
+  cover: /assets/images/covers/ICCV25.jpg
+  links:
+    Paper: https://arxiv.org/abs/2508.06325
+    Code: https://github.com/Seeyn/Anti-Tamper-Perturbation.git
   selected: true
   type: conference
