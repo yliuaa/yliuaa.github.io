@@ -99,7 +99,7 @@ title: Home
     {%- assign preprints = site.data.publications | where: "type", "preprint" -%}
 
     {%- assign preprints_sorted = preprints | sort: "pub_date" | reverse -%}
-    {%- assign preprints_top = preprints_sorted | slice: 0, 3 -%}
+    {%- assign preprints_top = preprints_sorted | slice: 0, 5 -%}
 
     {%- for p in preprints_top -%}
       {% include widgets/pub_line_item.html item=p %}
@@ -121,7 +121,7 @@ title: Home
         (See all on Google Scholar)
       </a>
   </h2>
-  {% assign pubs = site.data.publications | where_exp:"p","p.selected == true" | slice: 0, 3 %}
+  {% assign pubs = site.data.publications | where_exp:"p","p.selected == true" | slice: 0, 5 %}
   {% for p in pubs %}
     {% include widgets/pub_min_item.html item=p %}
   {% endfor %}
