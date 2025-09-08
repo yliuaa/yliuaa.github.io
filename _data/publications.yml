@@ -138,3 +138,20 @@
     Code: https://github.com/Seeyn/Anti-Tamper-Perturbation.git
   selected: true
   type: conference
+
+- id: pub6
+  title: "Designing Effective AI Explanations for Misinformation Detection: A Comparative Study of Content, Social, and Combined Explanations"
+  authors:
+    - Yeaeun Gong
+    - Yifan Liu
+    - Lanyu Shang
+    - Na Wei
+    - Dong Wang
+  pub: "The ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW)"
+  pub_date: 2025
+  year: 2025
+  cover: /assets/images/covers/CSCW.png
+  links:
+    Paper: https://arxiv.org/abs/2509.03693
+  selected: true
+  type: conference
