@@ -1,3 +1,17 @@
+- id: preprint0
+  title: "Balancing Dimensions of Trustworthiness in LLM Post-Training"
+  authors:
+    - Yifan Liu
+    - Yaokun Liu
+    - Zelin Li
+    - Dong Wang
+  pub: "Ongoing"
+  pub_date: 2025
+  year: 2025
+  # links:
+  #   Paper: https://arxiv.org/pdf/2509.10468v1
+  type: preprint
+
 - id: preprint1
   title: "Learning Decomposed Token Representations for Generative Recommendation"
   authors:
@@ -10,8 +24,8 @@
   pub: "Preprint under review"
   pub_date: 2025
   year: 2025
-  # links:
-  #   Paper: https://arxiv.org/abs/2345.6789
+  links:
+    Paper: https://arxiv.org/pdf/2509.10468v1
   type: preprint
 
 
@@ -25,7 +39,7 @@
     - Dong Wang
     - SeongKu Kang
   pub: "Preprint under review"
-  pub_date: 2024
+  pub_date: 2025
   year: 2025
   links:
     Paper: https://arxiv.org/abs/2508.00570
