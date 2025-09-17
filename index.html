@@ -102,7 +102,7 @@ title: Home
 
     {%- assign preprints = site.data.publications | where: "type", "preprint" -%}
 
-    {%- assign preprints_sorted = preprints | sort: "pub_date" | reverse -%}
+    {%- assign preprints_sorted = preprints -%}
     {%- assign preprints_top = preprints_sorted | slice: 0, 5 -%}
 
     {%- for p in preprints_top -%}
