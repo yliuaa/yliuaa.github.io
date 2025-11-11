@@ -119,19 +119,23 @@
   type: conference
 
 - id: pub4
-  title: "Intertwined Biases Across Social Media Spheres: Unpacking Correlations in Media Bias Dimensions"
+  title: "Reasoning-Based Uncertainty Estimation for Scalable Multidimensional Media Bias Annotation: A Benchmark Across Diverse Media Spaces"
+# Intertwined Biases Across Social Media Spheres: Unpacking Correlations in Media Bias Dimensions"
   authors:
     - Yifan Liu
+    - Aliya Maussymbayeva
+    - Aslanbek Murzakhmetov
+    - Alexandra Nemerenco
     - Yike Li
     - Dong Wang
-  pub: "International Conference on Advances in Social Networks Analysis and Mining (ASONAM)"
-  pub_date: 2024
-  year: 2024
-  cover: /assets/images/covers/mediabias2024.png
+  pub: "Knowledge-Based Systems (KBS) and International Conference on Advances in Social Networks Analysis and Mining (ASONAM-short)"
+  pub_date: 2025
+  year: 2025
+  cover: /assets/images/covers/UEAR.png
   links:
     Paper: https://arxiv.org/abs/2408.15406 
   selected: true
-  type: conference
+  type: journal
 
 - id: pub5
   title: "Anti-Tamper Protection for Unauthorized Individual Image Generation"
