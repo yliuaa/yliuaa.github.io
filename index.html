@@ -7,14 +7,44 @@ title: Home
 
 <div class="main-narrow">
 
-  <!-- 如果用 PNG -->
+  <style>
+    /* 默认（电脑/平板横屏）：左右布局 */
+    .hero-responsive {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    /* 手机端（屏幕宽度小于 768px）：强制改为上下堆叠 */
+    @media (max-width: 768px) {
+      .hero-responsive {
+        flex-direction: column; /* 垂直排列 */
+        align-items: center;    /* 居中对齐 */
+      }
+      
+      /* 让右侧文字区域宽度占满，防止被限制 */
+      .hero-responsive .info {
+        width: 100%;
+        text-align: center; /* 文字居中，如果喜欢左对齐可删掉这行 */
+      }
+
+      /* 图片下方加点空隙 */
+      .portrait-box {
+        margin-bottom: 1rem;
+      }
+      
+      /* 链接那一排也居中 */
+      .links {
+        justify-content: center;
+      }
+    }
+  </style>
+
   <link rel="icon" href="{{ '/assets/images/cats/qiaoqiao.png' | relative_url }}" type="image/png">
   <link rel="shortcut icon" href="{{ '/assets/images/cats/qiaoqiao.png' | relative_url }}" type="image/png">
 
-      <!-- 顶部名片：头像在左 -->
-  <section class="section hero" style="display:flex; align-items:flex-start; gap:1.5rem;">
+  <section class="section hero hero-responsive">
 
-    <!-- 左侧头像 -->
     {% if P.portrait_url %}
       <div class="portrait-box">
         <img src="{{ P.portrait_url | relative_url }}" alt="{{ P.primary_name }}">
@@ -24,7 +54,6 @@ title: Home
       </div>
     {% endif %}
 
-    <!-- 右侧信息 -->
     <div class="info" style="flex:1;">
       <h1 style="margin-top:0">
         {{ P.primary_name }}
@@ -86,7 +115,6 @@ title: Home
     </div>
   </section>
 
-  <!-- Updates（仍来自 _data/updates.yml） -->
   <section class="section">
     <h2>Updates</h2>
     <ul class="updates">
@@ -96,7 +124,6 @@ title: Home
     </ul>
   </section>
 
-  <!-- Preprints（从 _data/publications.yml 里取 type: preprint；兼容 GitHub Pages） -->
   <section class="section">
     <h2>Preprints</h2>
 
@@ -116,11 +143,9 @@ title: Home
     {%- endif -%}
   </section>
 
-  <!-- 精选 Publications（仍来自 _data/publications.yml；紧凑条目） -->
   <section class="section">
   <h2>
     Selected Publications
-    <!-- <a href="{{ 'publications' | relative_url }}" class="see-all">(all publications)</a> -->
     <a href="{{ site.data.profile.scholar }}" class="see-all" target="_blank" rel="noopener">
         (See all on Google Scholar)
       </a>
@@ -132,7 +157,6 @@ title: Home
   </section>
 
 
-  <!-- Education（改为读取 profile.yml） -->
   {% if P.education %}
   <section class="section">
     <h2>Education</h2>
@@ -155,7 +179,6 @@ title: Home
   </section>
   {% endif %}
 
-  <!-- 可选：Awards（读取 profile.yml） -->
   {% if P.awards and P.awards.size > 0 %}
   <section class="section">
     <h2>Awards</h2>
