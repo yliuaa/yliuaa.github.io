@@ -22,10 +22,18 @@ short_bio: >-
     Hi! I'm a third-year PhD student in Information Sciences supervised by
     <a href="https://www.wangdong.org/" target="_blank">Prof. Dong Wang</a>
     at the University of Illinois Urbana-Champaign.
-    Prior to that, I graduated with an M.S. in Computer Science from
+    Before that, I graduated with an M.S. in Computer Science from
     Georgia Institute of Technology and a BSc in Computer Science (Hons)
-    from University College London. My research interest lies in trustworthiness of AI (Fairness, Truthfulness and Privacy), multimodality and information retrieval.
+    from University College London. 
   </p>
+  <p>
+    My research interests are:
+  </p>
+  <ul>
+    <li><strong>Trustworthy and Reliable AI:</strong> model alignment and steering (fairness, safety, and privacy); alignment tax.</li>
+    <li><strong>Multimodality:</strong> modality fusion and alignment.</li>
+    <li><strong>Personalization:</strong> user modeling, preference learning, and recommender systems.</li>
+  </ul>
 
 portrait_url: /assets/images/photos/myself25.jpg
 portrait_caption: "Photo by Yaokun Liu."
