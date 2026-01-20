@@ -15,27 +15,31 @@ title: Home
       gap: 1.5rem;
     }
 
-    /* 手机端（屏幕宽度小于 768px）：强制改为上下堆叠 */
+    /* 手机端（屏幕宽度小于 768px） */
     @media (max-width: 768px) {
       .hero-responsive {
-        flex-direction: column; /* 垂直排列 */
-        align-items: center;    /* 居中对齐 */
+        flex-direction: column;  /* 垂直排列 */
+        align-items: flex-start; /* 【关键修改】让图片和整体容器靠左对齐 */
       }
       
-      /* 让右侧文字区域宽度占满，防止被限制 */
       .hero-responsive .info {
         width: 100%;
-        text-align: center; /* 文字居中，如果喜欢左对齐可删掉这行 */
+        text-align: left; /* 【关键修改】让文字强制左对齐 */
       }
 
       /* 图片下方加点空隙 */
       .portrait-box {
         margin-bottom: 1rem;
+        /* 如果您想要“图片居中，但文字左对齐”，请把下面这行注释取消掉： */
+        /* margin-left: auto; margin-right: auto; align-self: center; */
       }
       
-      /* 链接那一排也居中 */
+      /* 链接那一排也左对齐 */
       .links {
-        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start; /* 【关键修改】靠左对齐 */
+        gap: 0.5rem; /* 链接之间加一点小间距 */
       }
     }
   </style>
@@ -155,7 +159,6 @@ title: Home
     {% include widgets/pub_min_item.html item=p %}
   {% endfor %}
   </section>
-
 
   {% if P.education %}
   <section class="section">
