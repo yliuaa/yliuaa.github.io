@@ -64,6 +64,8 @@
   type: preprint
 
 
+
+
 - id: pub1
   title: "Component-Based Fairness in Face Attribute Classification with Bayesian Network-informed Meta Learning"
   authors:
@@ -137,6 +139,25 @@
     Paper: https://arxiv.org/abs/2408.15406 
   selected: true
   type: journal
+
+- id: pub0
+  title: "Mind the Ambiguity: Aleatoric Uncertainty Quantification in LLMs for Safe Medical Question Answering"
+  authors:
+    - Yaokun Liu
+    - Yifan Liu
+    - Phoebe Mbuvi
+    - Zelin Li
+    - Ruichen Yao
+    - Gawon Lim
+    - Dong Wang
+  pub: "The ACM Web Conference (WWW)"
+  pub_date: 2026
+  year: 2026
+  cover: /assets/images/covers/WWW26.png
+  links:
+    Paper: https://www.arxiv.org/abs/2601.17284
+  selected: true
+  type: conference
 
 - id: pub5
   title: "Anti-Tamper Protection for Unauthorized Individual Image Generation"
