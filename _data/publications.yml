@@ -1,9 +1,7 @@
 - id: preprint0
-  title: "Balancing Dimensions of Trustworthiness in LLM Post-Training"
+  title: "Mitigating the Fairness Steering Tax via Adaptive Inference-time Subspace Intervention"
   authors:
     - Yifan Liu
-    - Yaokun Liu
-    - Zelin Li
     - Dong Wang
   pub: "Ongoing"
   pub_date: 2025
@@ -12,45 +10,28 @@
   #   Paper: https://arxiv.org/pdf/2509.10468v1
   type: preprint
 
-- id: preprint1
-  title: "Learning Decomposed Token Representations for Generative Recommendation"
-  authors:
-    - Yifan Liu
-    - Yaokun Liu
-    - Zelin Li
-    - Ruichen Yao
-    - Yang Zhang
-    - Dong Wang
-  pub: "Preprint under review"
-  pub_date: 2025
-  year: 2025
-  links:
-    Paper: https://arxiv.org/pdf/2509.10468v1
-  type: preprint
-
-
-- id: preprint2
-  title: "Session-based Recommendation with Validated and Enriched LLM Intents"
-  authors:
-    - Gyuseok Lee
-    - Yaokun Liu
-    - Yifan Liu
-    - Susik Yoon
-    - Dong Wang
-    - SeongKu Kang
-  pub: "Preprint under review"
-  pub_date: 2025
-  year: 2025
-  links:
-    Paper: https://arxiv.org/abs/2508.00570
-  type: preprint
+# - id: preprint2
+#   title: "Session-based Recommendation with Validated and Enriched LLM Intents"
+#   authors:
+#     - Gyuseok Lee
+#     - Yaokun Liu
+#     - Yifan Liu
+#     - Susik Yoon
+#     - Dong Wang
+#     - SeongKu Kang
+#   pub: "Preprint under review"
+#   pub_date: 2025
+#   year: 2025
+#   links:
+#     Paper: https://arxiv.org/abs/2508.00570
+#   type: preprint
 
 
 - id: preprint3
   title: "Structural Tokenization for Generative Recommendation"
   authors:
-    - Yaokun Liu*
-    - Yifan Liu*
+    - Yaokun Liu
+    - Yifan Liu
     - Zhenrui Yue
     - Gyuseok Lee
     - Zelin Li
@@ -64,24 +45,21 @@
   type: preprint
 
 
-
-
-- id: pub1
-  title: "Component-Based Fairness in Face Attribute Classification with Bayesian Network-informed Meta Learning"
+- id: DECOR
+  title: "Learning Decomposed Token Representations for Generative Recommendation"
   authors:
-    - Yifan Liu
-    - Ruichen Yao
-    - Yaokun Liu
+    - Yifan Liu*
+    - Yaokun Liu*
     - Zelin Li
+    - Ruichen Yao
+    - Yang Zhang
     - Dong Wang
-  # abstract: "We focus on face component fairness, a fairness notion defined by biological face features..."
-  pub: "The ACM Conference on Fairness, Accountability, and Transparency (FAccT)"
-  pub_date: 2025
-  year: 2025
-  cover: /assets/images/covers/facefairness2024.png
+  pub: "The ACM SIGIR Conference on Research and Development in Information Retrieval"
+  pub_date: 2026
+  year: 2026
+  cover: /assets/images/covers/decor26.png 
   links:
-    Paper: https://dl.acm.org/doi/10.1145/3715275.3732066
-    Code: https://github.com/yliuaa/BNMR-FairCompFace.git
+    Paper: https://arxiv.org/pdf/2509.10468v1
   selected: true
   type: conference
 
@@ -103,6 +81,26 @@
     Code: https://github.com/yliuaa/MIMoE-FND.git
   selected: true
   type: conference
+
+- id: pub1
+  title: "Component-Based Fairness in Face Attribute Classification with Bayesian Network-informed Meta Learning"
+  authors:
+    - Yifan Liu
+    - Ruichen Yao
+    - Yaokun Liu
+    - Zelin Li
+    - Dong Wang
+  # abstract: "We focus on face component fairness, a fairness notion defined by biological face features..."
+  pub: "The ACM Conference on Fairness, Accountability, and Transparency (FAccT)"
+  pub_date: 2025
+  year: 2025
+  cover: /assets/images/covers/facefairness2024.png
+  links:
+    Paper: https://dl.acm.org/doi/10.1145/3715275.3732066
+    Code: https://github.com/yliuaa/BNMR-FairCompFace.git
+  selected: true
+  type: conference
+
 
 - id: pub3
   title: "The Effects of Robot Motion on Comfort Dynamics of Novice Users in Close-Proximity Human-Robot Interaction"
