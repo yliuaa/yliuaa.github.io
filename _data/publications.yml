@@ -2,29 +2,14 @@
   title: "Mitigating the Fairness Steering Tax via Adaptive Inference-time Subspace Intervention"
   authors:
     - Yifan Liu
+    - Yaokun Liu
     - Dong Wang
-  pub: "Ongoing"
+  pub: "Under review"
   pub_date: 2025
-  year: 2025
+  year: 2026
   # links:
   #   Paper: https://arxiv.org/pdf/2509.10468v1
   type: preprint
-
-# - id: preprint2
-#   title: "Session-based Recommendation with Validated and Enriched LLM Intents"
-#   authors:
-#     - Gyuseok Lee
-#     - Yaokun Liu
-#     - Yifan Liu
-#     - Susik Yoon
-#     - Dong Wang
-#     - SeongKu Kang
-#   pub: "Preprint under review"
-#   pub_date: 2025
-#   year: 2025
-#   links:
-#     Paper: https://arxiv.org/abs/2508.00570
-#   type: preprint
 
 
 - id: preprint3
