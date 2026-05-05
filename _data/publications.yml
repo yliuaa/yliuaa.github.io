@@ -29,13 +29,14 @@
   #   Paper: https://arxiv.org/abs/2345.6789
   type: preprint
 
-
 - id: DECOR
   title: "Learning Decomposed Token Representations for Generative Recommendation"
   authors:
     - Yifan Liu*
     - Yaokun Liu*
     - Zelin Li
+    - Gyuseok Lee
+    - Zhenrui Yue
     - Ruichen Yao
     - Yang Zhang
     - Dong Wang
@@ -44,7 +45,8 @@
   year: 2026
   cover: /assets/images/covers/decor26.png 
   links:
-    Paper: https://arxiv.org/pdf/2509.10468v1
+    Paper: https://arxiv.org/abs/2509.10468
+    Code: https://github.com/yliuaa/DECOR.git
   selected: true
   type: conference
 
@@ -118,8 +120,8 @@
   year: 2025
   cover: /assets/images/covers/UEAR.png
   links:
-    Code: https://github.com/yliuaa/IMB-UEAR.git
     Paper: https://arxiv.org/abs/2408.15406 
+    Code: https://github.com/yliuaa/IMB-UEAR.git
   selected: true
   type: journal
 
