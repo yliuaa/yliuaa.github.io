@@ -154,31 +154,84 @@ h2 .see-all:hover {
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
 .edu-item {
   display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 1.1rem;
 }
 
 .edu-logo {
-  width: 28px;
-  height: 28px;
-  margin-right: 0.6rem;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  margin-right: 1rem;
   object-fit: contain;
+}
+
+.edu-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  padding-top: 0.05rem;
+}
+
+.edu-heading-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
 }
 
 .edu-text .edu-school {
   font-size: 1rem;
+  line-height: 1.3;
+  min-width: 0;
 }
 
 .edu-text .edu-degree {
   font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.edu-text .edu-advisor {
+  font-size: 0.9rem;
+  line-height: 1.35;
 }
 
 .edu-text .edu-date {
   font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.edu-text .edu-date-inline {
+  flex: 0 0 auto;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.edu-text .edu-topic {
+  font-size: 0.9rem;
+  line-height: 1.35;
+  margin-top: 0.15rem;
+  color: #444;
+}
+
+@media (max-width: 520px) {
+  .edu-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.05rem;
+  }
+
+  .edu-text .edu-date-inline {
+    text-align: left;
+    white-space: normal;
+  }
 }
 
 .cat-gallery {

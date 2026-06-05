@@ -39,15 +39,27 @@ education:
   - name: University of Illinois Urbana-Champaign
     logo: /assets/images/badges/uiuc_seal.png
     position: "Ph.D. in Information Sciences"
+    advisor: "Advisor: Prof. Dong Wang"
     date: "Sep. 2023 – Present"
   - name: Georgia Institute of Technology
     logo: /assets/images/badges/gt-seal_0.png
     position: "M.S. in Computer Science"
+    advisor: "Advisor: Prof. Harish Ravichandar"
     date: "Sep. 2021 – May 2023"
   - name: University College London
     logo: /assets/images/badges/UCL_logo.png
     position: "BSc in Computer Science"
+    advisor: "Advisor: Prof. Mark Herbster"
     date: "Sep. 2017 – May 2019"
+
+# Fill work experience here. Uncomment and edit when ready.
+experience:
+  - name: IBM Research
+    position: "Research Intern"
+    logo: /assets/images/badges/ibm-logo-transparent.png
+    location: "Yorktown Heights, NY, USA"
+    date: "May. 2026 – Aug. 2026"
+    topic: "Safety and accountability in AI agent systems."
 
 # awards:
 #   - name: "1st Class Honours Degree"
@@ -60,6 +72,8 @@ service:
 - role: Reviewer
   venues:
     - The Web Conference (WWW)
+    - SIGIR Conference on Research and Development in Information Retrieval (SIGIR)
+    - Conference on Language Modeling (COLM)
     - AAAI Conference on Artificial Intelligence (AAAI)
     - IEEE Transactions on Big Data
     

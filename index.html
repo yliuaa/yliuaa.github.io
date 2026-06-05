@@ -160,6 +160,42 @@ title: Home
   {% endfor %}
   </section>
 
+  {% if P.experience and P.experience.size > 0 %}
+  <section class="section">
+    <h2>Work Experience</h2>
+    <ul class="edu-list">
+      {% for e in P.experience %}
+        <li class="edu-item">
+          {% if e.logo %}
+            <img src="{{ e.logo | relative_url }}" alt="{{ e.name }} logo" class="edu-logo">
+          {% endif %}
+          <div class="edu-text">
+            <div class="edu-heading-row">
+              <div class="edu-school">
+                {% if e.url %}
+                  <strong><a href="{{ e.url }}" target="_blank" rel="noopener">{{ e.name }}</a></strong>
+                {% else %}
+                  <strong>{{ e.name }}</strong>
+                {% endif %}
+              </div>
+              {% if e.date %}
+                <div class="edu-date edu-date-inline muted"><em>{{ e.date }}</em></div>
+              {% endif %}
+            </div>
+            <div class="edu-degree muted">{{ e.position }}</div>
+            {% if e.location %}
+              <div class="edu-degree muted">{{ e.location }}</div>
+            {% endif %}
+            {% if e.topic %}
+              <div class="edu-topic">{{ e.topic }}</div>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
   {% if P.education %}
   <section class="section">
     <h2>Education</h2>
@@ -170,10 +206,15 @@ title: Home
             <img src="{{ e.logo | relative_url }}" alt="{{ e.name }} logo" class="edu-logo">
           {% endif %}
           <div class="edu-text">
-            <div class="edu-school"><strong>{{ e.name }}</strong></div>
+            <div class="edu-heading-row">
+              <div class="edu-school"><strong>{{ e.name }}</strong></div>
+              {% if e.date %}
+                <div class="edu-date edu-date-inline muted"><em>{{ e.date }}</em></div>
+              {% endif %}
+            </div>
             <div class="edu-degree muted">{{ e.position }}</div>
-            {% if e.date %}
-              <div class="edu-date muted"><em>{{ e.date }}</em></div>
+            {% if e.advisor and e.advisor != "" %}
+              <div class="edu-advisor muted">{{ e.advisor }}</div>
             {% endif %}
           </div>
         </li>
