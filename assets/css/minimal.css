@@ -19,6 +19,14 @@ html, body { color: var(--fg); }
 .section h2{ font-size:1.25rem; margin:0 0 .5rem; font-weight:600; }
 
 .lead{ font-size:1.05rem; line-height:1.65; }
+.lead .intern-search {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0.65rem 0;
+  color: #374151;
+}
 .muted{ color:var(--muted); }
 
 a{ color:var(--link); text-decoration:none; }
@@ -98,6 +106,21 @@ a:hover{ text-decoration:underline; }
   font-weight: 500;
   margin-right: 0.5rem;
   color: #333;
+}
+
+.updates-scroll {
+  max-height: 8.5rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.updates-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.updates-scroll::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 999px;
 }
 
 .pub-item .venue,

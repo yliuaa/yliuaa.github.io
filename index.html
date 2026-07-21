@@ -121,8 +121,8 @@ title: Home
 
   <section class="section">
     <h2>Updates</h2>
-    <ul class="updates">
-      {% for u in site.data.updates limit:6 %}
+    <ul class="updates updates-scroll">
+      {% for u in site.data.updates %}
         <li><time>{{ u.date }}</time>{{ u.text }}</li>
       {% endfor %}
     </ul>

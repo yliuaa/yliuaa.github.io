@@ -12,23 +12,6 @@
   type: preprint
 
 
-- id: preprint3
-  title: "Structural Tokenization for Generative Recommendation"
-  authors:
-    - Yaokun Liu
-    - Yifan Liu
-    - Zhenrui Yue
-    - Gyuseok Lee
-    - Zelin Li
-    - Ruichen Yao
-    - Dong Wang
-  pub: "Preprint under review"
-  pub_date: 2025
-  year: 2025
-  # links:
-  #   Paper: https://arxiv.org/abs/2345.6789
-  type: preprint
-
 - id: DECOR
   title: "Learning Decomposed Token Representations for Generative Recommendation"
   authors:
@@ -124,6 +107,27 @@
     Code: https://github.com/yliuaa/IMB-UEAR.git
   selected: true
   type: journal
+
+
+- id: recsys2026
+  title: "Structural Tokenization for Generative Recommendation"
+  authors:
+    - Yaokun Liu
+    - Yifan Liu
+    - Zhenrui Yue
+    - Gyuseok Lee
+    - Zelin Li
+    - Ruichen Yao
+    - Dong Wang
+  pub: "The ACM Conference on Recommender Systems (RecSys)"
+  cover: /assets/images/covers/recsys.png
+  pub_date: 2026
+  year: 2026
+  selected: true
+  links:
+    Paper: https://scholar.google.com/citations?user=y2U7jQoAAAAJ
+  type: conference
+
 
 - id: pub0
   title: "Mind the Ambiguity: Aleatoric Uncertainty Quantification in LLMs for Safe Medical Question Answering"
