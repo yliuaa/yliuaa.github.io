@@ -12,7 +12,55 @@ title: Home
     .hero-responsive {
       display: flex;
       align-items: flex-start;
-      gap: 1.5rem;
+      gap: 2rem;
+    }
+
+    .profile-side {
+      flex: 0 0 205px;
+      text-align: center;
+    }
+
+    .profile-side .portrait-box {
+      margin: 0 auto .75rem;
+    }
+
+    .profile-side h1 {
+      font-size: 1.5rem;
+      line-height: 1.2;
+      margin: 0 0 .3rem;
+    }
+
+    .profile-side .contact {
+      font-size: .82rem;
+      overflow-wrap: anywhere;
+    }
+
+    .profile-side .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .45rem;
+      line-height: 1.35;
+      margin-top: .45rem;
+    }
+
+    .profile-side .icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.75rem;
+      height: 1.75rem;
+      color: #374151;
+      font-size: 1.2rem;
+      margin-right: 0;
+      text-decoration: none;
+      transition: color .15s ease, transform .15s ease;
+    }
+
+    .profile-side .icon-link:hover {
+      color: var(--link);
+      transform: translateY(-1px);
+      text-decoration: none;
     }
 
     /* 手机端（屏幕宽度小于 768px） */
@@ -20,6 +68,12 @@ title: Home
       .hero-responsive {
         flex-direction: column;  /* 垂直排列 */
         align-items: flex-start; /* 【关键修改】让图片和整体容器靠左对齐 */
+      }
+
+      .profile-side {
+        width: 100%;
+        flex-basis: auto;
+        text-align: center;
       }
       
       .hero-responsive .info {
@@ -41,6 +95,10 @@ title: Home
         justify-content: flex-start; /* 【关键修改】靠左对齐 */
         gap: 0.5rem; /* 链接之间加一点小间距 */
       }
+
+      .profile-side .links {
+        justify-content: center;
+      }
     }
   </style>
 
@@ -49,17 +107,17 @@ title: Home
 
   <section class="section hero hero-responsive">
 
-    {% if P.portrait_url %}
-      <div class="portrait-box">
-        <img src="{{ P.portrait_url | relative_url }}" alt="{{ P.primary_name }}">
-        {% if P.portrait_caption %}
-          <div class="portrait-caption">{{ P.portrait_caption }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
+    <div class="profile-side">
+      {% if P.portrait_url %}
+        <div class="portrait-box">
+          <img src="{{ P.portrait_url | relative_url }}" alt="{{ P.primary_name }}">
+          {% if P.portrait_caption %}
+            <div class="portrait-caption">{{ P.portrait_caption }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
 
-    <div class="info" style="flex:1;">
-      <h1 style="margin-top:0">
+      <h1>
         {{ P.primary_name }}
         {% if P.secondary_name %}
           <span class="alt-name">{{ P.secondary_name }}</span>
@@ -72,36 +130,43 @@ title: Home
       </div>
       {% endif %}
 
-      <div class="links" style="margin-top:.35rem">
-        {% assign sep = '' %}
+      <div class="links profile-links">
         {% if P.linkedin %}
-          {{ sep }}<a href="{{ P.linkedin }}" target="_blank">LinkedIn</a>
-          {% assign sep = ' · ' %}
+          <a class="icon-link" href="{{ P.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
         {% endif %}
         {% if P.github %}
-          {{ sep }}<a href="{{ P.github }}" target="_blank">GitHub</a>
-          {% assign sep = ' · ' %}
+          <a class="icon-link" href="{{ P.github }}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
         {% endif %}
         {% if P.scholar %}
-          {{ sep }}<a href="{{ P.scholar }}" target="_blank">Google Scholar</a>
-          {% assign sep = ' · ' %}
+          <a class="icon-link" href="{{ P.scholar }}" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+            <i class="ai ai-google-scholar"></i>
+          </a>
         {% endif %}
         {% if P.orcid %}
-          {{ sep }}<a href="{{ P.orcid }}" target="_blank">ORCID</a>
-          {% assign sep = ' · ' %}
+          <a class="icon-link" href="{{ P.orcid }}" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID">
+            <i class="ai ai-orcid"></i>
+          </a>
         {% endif %}
         {% if P.twitter %}
-          {{ sep }}<a href="{{ P.twitter }}" target="_blank">X</a>
-          {% assign sep = ' · ' %}
+          <a class="icon-link" href="{{ P.twitter }}" target="_blank" rel="noopener" aria-label="X" title="X">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
         {% endif %}
         {% if P.cv_link %}
-          {{ sep }}<a href="{{ P.cv_link }}" target="_blank">CV</a>
-          {% assign sep = ' · ' %}
+          <a class="icon-link" href="{{ P.cv_link }}" target="_blank" rel="noopener" aria-label="CV" title="CV">
+            <i class="fa-solid fa-file-lines"></i>
+          </a>
         {% endif %}
       </div>
+    </div>
 
+    <div class="info" style="flex:1;">
       {% if P.short_bio %}
-        <div class="lead" style="margin-top:.75rem">
+        <div class="lead" style="margin-top:0">
           {{ P.short_bio }}
         </div>
       {% endif %}

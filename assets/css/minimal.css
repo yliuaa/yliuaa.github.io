@@ -307,8 +307,8 @@ h2 .see-all:hover {
 
 .portrait-box {
   position: relative;
-  width: 180px;   /* 可以调大一点，例如 200px */
-  height: 180px;
+  width: 168px;
+  height: 168px;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
