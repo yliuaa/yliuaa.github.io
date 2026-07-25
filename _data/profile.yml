@@ -19,7 +19,7 @@ linkedin: "https://www.linkedin.com/in/yifan-liu-75a5931a7/"
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    Hi! I'm a third-year PhD student in Information Sciences supervised by
+    Hi! I'm a PhD student in Information Sciences supervised by
     <a href="https://www.wangdong.org/" target="_blank">Prof. Dong Wang</a>
     at the University of Illinois Urbana-Champaign.
     Before that, I graduated with an M.S. in Computer Science from
@@ -27,7 +27,7 @@ short_bio: >-
     from University College London. My research interests are:
   </p>
   <ul>
-    <li><strong>Trustworthy and Responsible AI:</strong> model alignment and steering (fairness, safety, and privacy); alignment tax.</li>
+    <li><strong>Trustworthy and Responsible AI:</strong> model alignment and steering (safety, fairness, and privacy); alignment tax.</li>
     <li><strong>Personalization:</strong> user modeling and recommender systems.</li>
     <li><strong>Multimodality:</strong> modality fusion and alignment.</li>
   </ul>
@@ -35,7 +35,7 @@ short_bio: >-
     I am actively seeking U.S.-based research internship opportunities for Summer 2027 in areas related to agentic AI, AI safety, and trustworthy information retrieval.
   </p>
 
-portrait_url: /assets/images/photos/myself25.jpg
+portrait_url: /assets/images/photos/myself2026.png
 portrait_caption: "Photo by Yaokun Liu."
 
 education:
