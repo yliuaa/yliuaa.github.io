@@ -62,7 +62,7 @@ experience:
     logo: /assets/images/badges/ibm-logo-transparent.png
     location: "Yorktown Heights, NY, USA"
     date: "May. 2026 – Aug. 2026"
-    topic: "Safety and accountability in AI agent systems."
+    topic: "Developing methods to attribute and explain actions in LLM-based agent systems, with a focus on safety and accountability."
 
 # awards:
 #   - name: "1st Class Honours Degree"
@@ -71,14 +71,29 @@ experience:
   #   date: 2021
 
 
+teaching:
+  - role: Teaching Assistant
+    institution: University of Illinois Urbana-Champaign
+    terms: Fall 2023, Spring 2024, Fall 2024
+    courses:
+      - code: IS 202
+        title: Social Aspects of Information Technology
+        description: Facilitated discussion sections and graded coursework.
+      - code: IS 305
+        title: Programming for Information Problems
+        description: Graded programming assignments and provided feedback.
+      - code: IS 597
+        title: Human-Centered Data Science
+        description: Designed assignments and delivered concept tutorials.
+
 service:
-- role: Reviewer
-  venues:
-    - The Web Conference (WWW)
-    - SIGIR Conference on Research and Development in Information Retrieval (SIGIR)
-    - Conference on Language Modeling (COLM)
-    - AAAI Conference on Artificial Intelligence (AAAI)
-    - IEEE Transactions on Big Data
+  - role: Reviewer
+    venues:
+      - ACM Web Conference 2025
+      - AAAI Conference on Artificial Intelligence 2026
+      - ACM SIGIR Conference 2026
+      - Conference on Language Modeling (COLM) 2026
+      - IEEE Transactions on Big Data
     
 
 cats:
@@ -88,3 +103,5 @@ cats:
   photo: /assets/images/cats/xiangxiang.png
 - name: Qiao & Xiang
   photo: /assets/images/cats/QQXX.png
+- name: Qiao & Xiang
+  photo: /assets/images/cats/qqxx2.png

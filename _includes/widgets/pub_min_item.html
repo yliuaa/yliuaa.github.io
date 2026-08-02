@@ -1,13 +1,6 @@
 {% assign p = include.item %}
-{% assign has_cover = p.cover and p.cover != '' %}
 
-<div class="pub-item {% unless has_cover %}no-thumb{% endunless %}">
-  {% if has_cover %}
-    <div class="thumb">
-      <img src="{{ p.cover | relative_url }}" alt="{{ p.title }}">
-    </div>
-  {% endif %}
-
+<div class="pub-item no-thumb">
   <div class="content">
     <h3>{{ p.title }}</h3>
 
@@ -17,24 +10,40 @@
     </div>
 
     <!-- venue / 年份 单独一行 -->
-    {% if p.pub or p.pub_date or p.pub_pre or p.pub_post or p.pub_last %}
+    {% if p.type == 'preprint' %}
       <div class="venue muted">
-        {% if p.pub_pre %}{{ p.pub_pre }}{% endif %}
-        {% if p.pub %}<i>{{ p.pub }}</i>{% endif %}
-        {% if p.pub_post %}{{ p.pub_post }}{% endif %}
-        {% if p.pub_date %} · {{ p.pub_date }}{% endif %}
-        {% if p.pub_last %} {{ p.pub_last }}{% endif %}
+        {% if p.author_role == 'lead' and p.topics and p.topics.size > 0 %}
+          <span class="topic-tags" aria-label="Research topics">
+            {% for topic in p.topics %}
+              <span class="topic-tag topic-tag--{{ topic | slugify }}">{{ topic }}</span>
+            {% endfor %}
+          </span>
+        {% endif %}
+        <i>Preprint, under review</i>{% if p.year %} {{ p.year }}{% endif %}
+      </div>
+    {% elsif p.pub or p.pub_date or p.pub_pre or p.pub_post or p.pub_last %}
+      <div class="venue muted">
+        {% if p.author_role == 'lead' and p.topics and p.topics.size > 0 %}
+          <span class="topic-tags" aria-label="Research topics">
+            {% for topic in p.topics %}
+              <span class="topic-tag topic-tag--{{ topic | slugify }}">{{ topic }}</span>
+            {% endfor %}
+          </span>
+        {% endif %}
+        {% if p.venue_short %}
+          <i>{{ p.venue_short }}</i>
+        {% else %}
+          {% if p.pub_pre %}{{ p.pub_pre }}{% endif %}
+          {% if p.pub %}<i>{{ p.pub }}</i>{% endif %}
+          {% if p.pub_post %}{{ p.pub_post }}{% endif %}
+          {% if p.pub_date %} · {{ p.pub_date }}{% endif %}
+          {% if p.pub_last %} {{ p.pub_last }}{% endif %}
+        {% endif %}
       </div>
     {% endif %}
 
-    <!-- 摘要 -->
-    {% if p.abstract %}
-      <div class="muted clamp-2" style="margin:.15rem 0 .35rem">{{ p.abstract }}</div>
-    {% endif %}
-
-    <!-- 链接 -->
     {% if p.links %}
-      <div class="links">
+      <div class="links publication-links-row">
         {% for link in p.links %}
           {% if link[1].url %}
             <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>
@@ -44,6 +53,11 @@
         {% endfor %}
       </div>
     {% endif %}
+
+    <!-- 摘要 -->
+    {% if p.abstract %}
+      <div class="muted clamp-2" style="margin:.15rem 0 .35rem">{{ p.abstract }}</div>
+    {% endif %}
+
   </div>
 </div>
-

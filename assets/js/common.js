@@ -38,4 +38,52 @@ $(function () {
     $(".lazy").on("load", function () {
         $grid.masonry('layout');
     });
+
+    var filterButtons = document.querySelectorAll('[data-publication-filter]');
+    if (filterButtons.length) {
+        var publicationEntries = document.querySelectorAll('.publication-entry');
+        var publicationGroups = document.querySelectorAll('[data-publication-group]');
+        var emptyState = document.getElementById('publication-filter-empty');
+        var validFilters = ['all', 'lead', 'collaboration'];
+
+        function applyPublicationFilter(filter) {
+            if (validFilters.indexOf(filter) === -1) filter = 'all';
+
+            var visibleCount = 0;
+            publicationEntries.forEach(function (entry) {
+                var isVisible = filter === 'all' || entry.dataset.authorRole === filter;
+                entry.hidden = !isVisible;
+                if (isVisible) visibleCount += 1;
+            });
+
+            publicationGroups.forEach(function (group) {
+                group.hidden = !group.querySelector('.publication-entry:not([hidden])');
+            });
+
+            filterButtons.forEach(function (button) {
+                var isActive = button.dataset.publicationFilter === filter;
+                button.classList.toggle('is-active', isActive);
+                button.setAttribute('aria-pressed', String(isActive));
+            });
+
+            emptyState.hidden = visibleCount !== 0;
+
+            var url = new URL(window.location.href);
+            if (filter === 'lead') {
+                url.searchParams.delete('filter');
+            } else {
+                url.searchParams.set('filter', filter);
+            }
+            window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+        }
+
+        filterButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                applyPublicationFilter(button.dataset.publicationFilter);
+            });
+        });
+
+        var initialFilter = new URLSearchParams(window.location.search).get('filter') || 'lead';
+        applyPublicationFilter(initialFilter);
+    }
 })

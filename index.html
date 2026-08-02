@@ -228,36 +228,44 @@ title: Home
     </ul>
   </section>
   {% endif %}
-  <section class="section">
-    <h2>Preprints</h2>
 
-    {%- assign preprints = site.data.publications | where: "type", "preprint" -%}
+  {% assign pubs_all = site.data.publications %}
+  {% assign lead_pubs = pubs_all | where: "author_role", "lead" %}
+  {% assign collaboration_pubs = pubs_all | where: "author_role", "collaboration" %}
 
-    {%- assign preprints_sorted = preprints -%}
-    {%- assign preprints_top = preprints_sorted | slice: 0, 5 -%}
+  <section class="section" id="publications">
+    <div class="publication-section-header">
+      <h2>Selected Publications</h2>
 
-    {%- for p in preprints_top -%}
-      {% include widgets/pub_line_item.html item=p %}
-    {%- endfor -%}
+      <nav class="publication-filter" aria-label="Filter publications">
+        <div class="publication-filter__buttons" role="group" aria-label="Publication authorship">
+          <button type="button" class="publication-filter__button" data-publication-filter="all" aria-pressed="false">
+            All <span class="publication-filter__count">{{ pubs_all.size }}</span>
+          </button>
+          <button type="button" class="publication-filter__button is-active" data-publication-filter="lead" aria-pressed="true">
+            First &amp; co-first authored <span class="publication-filter__count">{{ lead_pubs.size }}</span>
+          </button>
+          <button type="button" class="publication-filter__button" data-publication-filter="collaboration" aria-pressed="false">
+            Collaborations <span class="publication-filter__count">{{ collaboration_pubs.size }}</span>
+          </button>
+        </div>
+      </nav>
 
-    {%- if preprints_sorted.size > preprints_top.size -%}
-      <div style="margin-top:.25rem">
-        <a href="{{ 'publications' | relative_url }}">See more →</a>
+    </div>
+
+    <div class="publication-group publication-group--papers">
+      <div data-publication-group>
+      {% for p in pubs_all %}
+        <div class="publication-entry" data-author-role="{{ p.author_role }}"{% if p.author_role != 'lead' %} hidden{% endif %}>
+          {% include widgets/pub_min_item.html item=p %}
+        </div>
+      {% endfor %}
       </div>
-    {%- endif -%}
-  </section>
+    </div>
 
-  <section class="section">
-  <h2>
-    Selected Publications
-    <a href="{{ site.data.profile.scholar }}" class="see-all" target="_blank" rel="noopener">
-        (See all on Google Scholar)
-      </a>
-  </h2>
-  {% assign pubs = site.data.publications | where_exp:"p","p.selected == true" | slice: 0, 5 %}
-  {% for p in pubs %}
-    {% include widgets/pub_min_item.html item=p %}
-  {% endfor %}
+    <p class="publication-filter__empty muted" id="publication-filter-empty" hidden>
+      No publications match this filter.
+    </p>
   </section>
 
 
@@ -299,19 +307,42 @@ title: Home
   </section>
   {% endif %}
 
-  {% if P.service %}
+  {% if P.teaching or P.service %}
   <section class="section">
-    <h2>Service</h2>
-    <ul>
+    <h2>Teaching and Service</h2>
+
+    {% for t in P.teaching %}
+      <div class="teaching-entry">
+        <div class="teaching-entry__heading">
+          <strong>{{ t.role }}</strong>
+          {% if t.terms %}<span class="muted">{{ t.terms }}</span>{% endif %}
+        </div>
+        {% if t.institution %}
+          <div class="teaching-entry__institution muted">{{ t.institution }}</div>
+        {% endif %}
+        {% if t.courses %}
+          <ul class="teaching-courses">
+            {% for course in t.courses %}
+              <li>
+                <strong>{{ course.code }}: {{ course.title }}</strong>
+                {% if course.description %}<span class="muted"> — {{ course.description }}</span>{% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+    <div class="service-list">
       {% for s in P.service %}
-        <li>
+        <div class="service-entry">
           <strong>{{ s.role }}:</strong>
           {% if s.venues %}
-            {{ s.venues | join: ", " }}
+            {{ s.venues | join: "; " }}
           {% endif %}
-        </li>
+        </div>
       {% endfor %}
-    </ul>
+    </div>
   </section>
   {% endif %}
 

@@ -1,116 +1,125 @@
-- id: preprint0
+# Keep this list aligned with the publication section of CV-Yifan-Liu/papers.bib.
+# `author_role` drives the filters and cover-image policy on the website:
+#   lead          = first or co-first authored
+#   collaboration = all other co-authored work
+
+- id: query-conditioned-attribution
+  title: "Query-Conditioned Agent Action Attribution with White-Box Proxies"
+  authors:
+    - Yifan Liu
+    - Praveen Venkateswaran
+    - Abdulhamid Adebayo
+    - Dong Wang
+  pub: "Under review"
+  pub_date: 2026
+  year: 2026
+  type: preprint
+  author_role: lead
+  topics:
+    - AI Safety
+
+- id: steering-tax
   title: "Mitigating the Fairness Steering Tax via Adaptive Inference-time Subspace Intervention"
   authors:
     - Yifan Liu
     - Yaokun Liu
+    - Ching-Yu Lin
+    - Daniel Yue Zhang
+    - Ruichen Yao
+    - Zelin Li
+    - Mano Paul
+    - Rahul Gupta
     - Dong Wang
   pub: "Under review"
-  pub_date: 2025
+  pub_date: 2026
   year: 2026
-  # links:
-  #   Paper: https://arxiv.org/pdf/2509.10468v1
   type: preprint
+  author_role: lead
+  topics:
+    - AI Safety
+    - Fairness
 
+- id: propuq-mas
+  title: "PropUQ-MAS: Propagation-Aware Uncertainty Quantification for LLM Multi-Agent Systems"
+  authors:
+    - Yaokun Liu*
+    - Yifan Liu*
+    - Daniel Yue Zhang
+    - Zelin Li
+    - Ruichen Yao
+    - Dong Wang
+  pub: "Under review"
+  pub_date: 2026
+  year: 2026
+  type: preprint
+  author_role: lead
+  topics:
+    - AI Safety
 
-- id: DECOR
-  title: "Learning Decomposed Token Representations for Generative Recommendation"
+- id: decor
+  title: "Learning Decomposed Contextual Token Representations from Pretrained and Collaborative Signals for Generative Recommendation"
   authors:
     - Yifan Liu*
     - Yaokun Liu*
     - Zelin Li
-    - Gyuseok Lee
     - Zhenrui Yue
+    - Gyuseok Lee
     - Ruichen Yao
     - Yang Zhang
     - Dong Wang
-  pub: "The ACM SIGIR Conference on Research and Development in Information Retrieval"
+  pub: "ACM SIGIR Conference on Research and Development in Information Retrieval"
+  venue_short: "SIGIR 2026"
   pub_date: 2026
   year: 2026
-  cover: /assets/images/covers/decor26.png 
   links:
     Paper: https://arxiv.org/abs/2509.10468
     Code: https://github.com/yliuaa/DECOR.git
   selected: true
   type: conference
+  author_role: lead
+  topics:
+    - RecSys
 
-- id: pub2
-  title: "Modality Interactive Mixture-of-Experts for Fake News Detection"
+- id: mash
+  title: "MASH: A Multiplatform and Multimodal Annotated Dataset for Societal Impact of Hurricane"
   authors:
-    - Yifan Liu
-    - Yaokun Liu
-    - Zelin Li
     - Ruichen Yao
-    - Yang Zhang
-    - Dong Wang
-  pub: "The ACM Web Conference (WWW)"
-  pub_date: 2025
-  year: 2025
-  cover: /assets/images/covers/MIMoE-FND2024.png
-  links:
-    Paper: https://arxiv.org/abs/2501.12431
-    Code: https://github.com/yliuaa/MIMoE-FND.git
-  selected: true
-  type: conference
-
-- id: pub1
-  title: "Component-Based Fairness in Face Attribute Classification with Bayesian Network-informed Meta Learning"
-  authors:
-    - Yifan Liu
-    - Ruichen Yao
-    - Yaokun Liu
-    - Zelin Li
-    - Dong Wang
-  # abstract: "We focus on face component fairness, a fairness notion defined by biological face features..."
-  pub: "The ACM Conference on Fairness, Accountability, and Transparency (FAccT)"
-  pub_date: 2025
-  year: 2025
-  cover: /assets/images/covers/facefairness2024.png
-  links:
-    Paper: https://dl.acm.org/doi/10.1145/3715275.3732066
-    Code: https://github.com/yliuaa/BNMR-FairCompFace.git
-  selected: true
-  type: conference
-
-
-- id: pub3
-  title: "The Effects of Robot Motion on Comfort Dynamics of Novice Users in Close-Proximity Human-Robot Interaction"
-  authors:
-    - Pierce Howell
-    - Jack Kolb*
-    - Yifan Liu*
-    - Harish Ravichandar
-  pub: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)"
-  pub_date: 2023
-  year: 2023
-  cover: /assets/images/covers/iros2023.png
-  links:
-    Paper: https://arxiv.org/pdf/2308.01466
-  selected: false
-  type: conference
-
-- id: pub4
-  title: "Reasoning-Based Uncertainty Estimation for Scalable Multidimensional Media Bias Annotation: A Benchmark Across Diverse Media Spaces"
-# Intertwined Biases Across Social Media Spheres: Unpacking Correlations in Media Bias Dimensions"
-  authors:
-    - Yifan Liu
-    - Aliya Maussymbayeva
     - Aslanbek Murzakhmetov
-    - Alexandra Nemerenco
-    - Yike Li
+    - Raaghav Pillai
+    - Aliya Maussymbayeva
+    - Zelin Li
+    - Yifan Liu
+    - Yaokun Liu
+    - Lanyu Shang
+    - Yang Zhang
+    - Na Wei
+    - Ximing Cai
     - Dong Wang
-  pub: "Knowledge-Based Systems (KBS) and International Conference on Advances in Social Networks Analysis and Mining (ASONAM-short)"
-  pub_date: 2025
-  year: 2025
-  cover: /assets/images/covers/UEAR.png
+  pub: "International AAAI Conference on Web and Social Media (ICWSM)"
+  venue_short: "ICWSM 2026"
+  pub_date: 2026
+  year: 2026
   links:
-    Paper: https://arxiv.org/abs/2408.15406 
-    Code: https://github.com/yliuaa/IMB-UEAR.git
-  selected: true
-  type: journal
+    Paper: https://ojs.aaai.org/index.php/ICWSM/article/view/42795
+  type: conference
+  author_role: collaboration
 
+- id: instruction-bleed
+  title: "Instruction Bleed: Cross-Module Interference in Prompt-Composed Agentic Systems"
+  authors:
+    - Ching-Yu Lin
+    - Yifan Liu
+  pub: "Workshop on Failure Modes of Agentic AI at ICML"
+  venue_short: "ICML Workshop 2026"
+  pub_date: 2026
+  year: 2026
+  links:
+    Paper: https://openreview.net/forum?id=RkOdNFPhgS
+  type: workshop
+  author_role: collaboration
 
-- id: recsys2026
-  title: "Structural Tokenization for Generative Recommendation"
+- id: topology-aware-tokenization
+  title: "Topology-Aware Tokenization for Generative Recommendation"
   authors:
     - Yaokun Liu
     - Yifan Liu
@@ -119,17 +128,17 @@
     - Zelin Li
     - Ruichen Yao
     - Dong Wang
-  pub: "The ACM Conference on Recommender Systems (RecSys)"
-  cover: /assets/images/covers/recsys.png
+  pub: "ACM Conference on Recommender Systems (RecSys)"
+  venue_short: "RecSys 2026"
   pub_date: 2026
   year: 2026
-  selected: true
   links:
-    Paper: https://scholar.google.com/citations?user=y2U7jQoAAAAJ
+    Paper: https://arxiv.org/abs/2607.18600
+  selected: true
   type: conference
+  author_role: collaboration
 
-
-- id: pub0
+- id: mind-the-ambiguity
   title: "Mind the Ambiguity: Aleatoric Uncertainty Quantification in LLMs for Safe Medical Question Answering"
   authors:
     - Yaokun Liu
@@ -139,16 +148,118 @@
     - Ruichen Yao
     - Gawon Lim
     - Dong Wang
-  pub: "The ACM Web Conference (WWW)"
+  pub: "ACM Web Conference (WWW)"
+  venue_short: "theWebConf 2026"
   pub_date: 2026
   year: 2026
-  cover: /assets/images/covers/WWW26.png
   links:
     Paper: https://www.arxiv.org/abs/2601.17284
   selected: true
   type: conference
+  author_role: collaboration
 
-- id: pub5
+- id: red-teaming-privacy
+  title: "Red-Teaming Privacy-Protective Perturbations: Blind Face Restoration as an Attack Strategy"
+  authors:
+    - Zelin Li
+    - Yifan Liu
+    - Huimin Zeng
+    - Ruichen Yao
+    - Yaokun Liu
+    - Yang Zhang
+    - Dong Wang
+  pub: "ACM Web Conference (WWW)"
+  venue_short: "theWebConf 2026"
+  pub_date: 2026
+  year: 2026
+  type: conference
+  author_role: collaboration
+
+- id: sprint
+  title: "SPRINT: Scalable and Predictive Intent Refinement for LLM-Enhanced Session-based Recommendation"
+  authors:
+    - Gyuseok Lee
+    - Yaokun Liu
+    - Yifan Liu
+    - Susik Yoon
+    - Dong Wang
+    - SeongKu Kang
+  pub: "ACM SIGIR Conference on Research and Development in Information Retrieval"
+  venue_short: "SIGIR 2026"
+  pub_date: 2026
+  year: 2026
+  type: conference
+  author_role: collaboration
+
+- id: media-bias-uncertainty
+  title: "Reasoning-Based Uncertainty Estimation for Scalable Multidimensional Media Bias Annotation: A Benchmark Across Diverse Media Spaces"
+  authors:
+    - Yifan Liu
+    - Aliya Maussymbayeva
+    - Aslanbek Murzakhmetov
+    - Alexandra Nemerenco
+    - Yike Li
+    - Dong Wang
+  pub: "Knowledge-Based Systems (KBS) and IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM)"
+  venue_short: "KBS 2025 & ASONAM 2024"
+  pub_date: 2025
+  year: 2025
+  links:
+    Paper: https://arxiv.org/abs/2408.15406
+    Code: https://github.com/yliuaa/IMB-UEAR.git
+  selected: true
+  type: journal
+  author_role: lead
+  topics:
+    - Fairness
+
+- id: mimoe-fnd
+  title: "Modality Interactive Mixture-of-Experts for Fake News Detection"
+  authors:
+    - Yifan Liu
+    - Yaokun Liu
+    - Zelin Li
+    - Ruichen Yao
+    - Yang Zhang
+    - Dong Wang
+  pub: "ACM Web Conference (WWW)"
+  venue_short: "theWebConf 2025"
+  pub_date: 2025
+  year: 2025
+  links:
+    Paper: https://doi.org/10.1145/3696410.3714522
+    Code: https://github.com/yliuaa/MIMoE-FND.git
+  selected: true
+  type: conference
+  author_role: lead
+  topics:
+    - AI Safety
+    - Multimodality
+
+- id: face-fairness
+  title: "Component-Based Fairness in Face Attribute Classification with Bayesian Network-informed Meta Learning"
+  authors:
+    - Yifan Liu
+    - Ruichen Yao
+    - Yaokun Liu
+    - Ruohan Zong
+    - Zelin Li
+    - Yang Zhang
+    - Dong Wang
+  pub: "ACM Conference on Fairness, Accountability, and Transparency (FAccT)"
+  venue_short: "FAccT 2025"
+  pub_date: 2025
+  year: 2025
+  links:
+    Paper: https://dl.acm.org/doi/10.1145/3715275.3732066
+    Code: https://github.com/yliuaa/BNMR-FairCompFace.git
+  selected: true
+  type: conference
+  author_role: lead
+  topics:
+    - Fairness
+
+- id: anti-tamper
   title: "Anti-Tamper Protection for Unauthorized Individual Image Generation"
   authors:
     - Zelin Li
@@ -158,17 +269,18 @@
     - Yaokun Liu
     - Yang Zhang
     - Dong Wang
-  pub: "International Conference on Computer Vision (ICCV)"
+  pub: "IEEE/CVF International Conference on Computer Vision (ICCV)"
+  venue_short: "ICCV 2025"
   pub_date: 2025
   year: 2025
-  cover: /assets/images/covers/ICCV25.jpg
   links:
     Paper: https://arxiv.org/abs/2508.06325
     Code: https://github.com/Seeyn/Anti-Tamper-Perturbation.git
   selected: true
   type: conference
+  author_role: collaboration
 
-- id: pub6
+- id: ai-explanations
   title: "Designing Effective AI Explanations for Misinformation Detection: A Comparative Study of Content, Social, and Combined Explanations"
   authors:
     - Yeaeun Gong
@@ -176,11 +288,63 @@
     - Lanyu Shang
     - Na Wei
     - Dong Wang
-  pub: "The ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW)"
+  pub: "Proceedings of the ACM on Human-Computer Interaction (CSCW)"
+  venue_short: "CSCW 2025"
   pub_date: 2025
   year: 2025
-  cover: /assets/images/covers/CSCW.png
   links:
     Paper: https://arxiv.org/abs/2509.03693
   selected: true
+  type: journal
+  author_role: collaboration
+
+- id: retrieval-augmented-fact-verification
+  title: "Retrieval Augmented Fact Verification by Synthesizing Contrastive Arguments"
+  authors:
+    - Zhenrui Yue
+    - Huimin Zeng
+    - Lanyu Shang
+    - Yifan Liu
+    - Yang Zhang
+    - Dong Wang
+  pub: "Annual Meeting of the Association for Computational Linguistics (ACL)"
+  venue_short: "ACL 2024"
+  pub_date: 2024
+  year: 2024
   type: conference
+  author_role: collaboration
+
+- id: tripartite-intelligence
+  title: "Tripartite Intelligence: Synergizing Deep Neural Network, Large Language Model, and Human Intelligence for Public Health Misinformation Detection"
+  authors:
+    - Yang Zhang
+    - Ruohan Zong
+    - Lanyu Shang
+    - Zhenrui Yue
+    - Huimin Zeng
+    - Yifan Liu
+    - Dong Wang
+  pub: "ACM Collective Intelligence Conference"
+  venue_short: "CI 2024"
+  pub_date: 2024
+  year: 2024
+  links:
+    Paper: https://doi.org/10.1145/3643562.3672613
+  type: conference
+  author_role: collaboration
+
+- id: robot-motion-comfort
+  title: "The Effects of Robot Motion on Comfort Dynamics of Novice Users in Close-Proximity Human-Robot Interaction"
+  authors:
+    - Pierce Howell
+    - Jack Kolb*
+    - Yifan Liu*
+    - Harish Ravichandar
+  pub: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)"
+  venue_short: "IROS 2023"
+  pub_date: 2023
+  year: 2023
+  links:
+    Paper: https://arxiv.org/abs/2308.01466
+  type: conference
+  author_role: collaboration
