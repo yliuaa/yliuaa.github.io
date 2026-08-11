@@ -90,7 +90,7 @@ service:
   - role: Reviewer
     venues:
       - ACM Web Conference 2025
-      - AAAI Conference on Artificial Intelligence 2026
+      - AAAI Conference on Artificial Intelligence 2026,2027
       - ACM SIGIR Conference 2026
       - Conference on Language Modeling (COLM) 2026
       - IEEE Transactions on Big Data
