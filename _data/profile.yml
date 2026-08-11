@@ -27,9 +27,9 @@ short_bio: >-
     from University College London. My research interests are:
   </p>
   <ul>
-    <li><strong>Trustworthy and Responsible AI:</strong> model alignment and steering (safety, fairness, and privacy); alignment tax.</li>
-    <li><strong>Personalization:</strong> user modeling and recommender systems.</li>
-    <li><strong>Multimodality:</strong> modality fusion and alignment.</li>
+    <li><strong>Long-Horizon Agent Safety:</strong> reliability of autonomous agents over extended interactions, including memory and persistent-state safety, behavioral monitoring, and action attribution.</li>
+    <li><strong>Trustworthy AI:</strong> model alignment, safety, fairness, privacy, and tradeoffs introduced by alignment interventions.</li>
+    <li><strong>LLM Post-Training and Self-Improvement:</strong> efficient adaptation of language agents.</li>
   </ul>
   <p class="intern-search">
     I am actively seeking U.S.-based research internship opportunities for Summer 2027 in areas related to agentic AI, AI safety, and trustworthy information retrieval.
