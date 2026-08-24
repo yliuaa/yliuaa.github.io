@@ -16,7 +16,7 @@
   type: preprint
   author_role: lead
   topics:
-    - AI Safety
+    - Safety
 
 - id: steering-tax
   title: "Mitigating the Fairness Steering Tax via Adaptive Inference-time Subspace Intervention"
@@ -36,7 +36,7 @@
   type: preprint
   author_role: lead
   topics:
-    - AI Safety
+    - Safety
     - Fairness
 
 - id: propuq-mas
@@ -54,7 +54,7 @@
   type: conference
   author_role: lead
   topics:
-    - AI Safety
+    - Safety
 
 - id: decor
   title: "Learning Decomposed Contextual Token Representations from Pretrained and Collaborative Signals for Generative Recommendation"
@@ -233,7 +233,7 @@
   type: conference
   author_role: lead
   topics:
-    - AI Safety
+    - Safety
     - Multimodality
 
 - id: face-fairness
