@@ -51,6 +51,9 @@
   pub: "EMNLP (Main Conference)"
   pub_date: 2026
   year: 2026
+  links:
+    Paper: https://arxiv.org/abs/2608.22130
+    Code: https://github.com/yaokunliu/PropUQ-MAS.git
   type: conference
   author_role: lead
   topics:
