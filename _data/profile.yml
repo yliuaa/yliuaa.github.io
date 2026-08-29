@@ -19,24 +19,47 @@ linkedin: "https://www.linkedin.com/in/yifan-liu-75a5931a7/"
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    Hi! I'm a PhD student in Information Sciences supervised by
-    <a href="https://www.wangdong.org/" target="_blank">Prof. Dong Wang</a>
-    at the University of Illinois Urbana-Champaign.
-    Before that, I graduated with an M.S. in Computer Science from
+    Hi! I'm a PhD student at the University of Illinois Urbana-Champaign, supervised by
+    <a href="https://www.wangdong.org/" target="_blank" rel="noopener">Prof. Dong Wang</a>.
+    Previously, I earned an M.S. in Computer Science from
     Georgia Institute of Technology and a BSc in Computer Science (Hons)
-    from University College London. My research interests are:
-  </p>
-  <ul>
-    <li><strong>Long-Horizon Agent Safety:</strong> reliability of autonomous agents over extended interactions, including memory and persistent-state safety, behavioral monitoring, and action attribution.</li>
-    <li><strong>Trustworthy AI:</strong> model alignment, safety, fairness, privacy, and tradeoffs introduced by alignment interventions.</li>
-    <li><strong>LLM Post-Training and Self-Improvement:</strong> efficient adaptation of language agents.</li>
-  </ul>
-  <p class="intern-search">
-    I am actively seeking U.S.-based research internship opportunities for Summer 2027 in areas related to agentic AI, AI safety, and trustworthy information retrieval.
+    from University College London. <span class="collaboration-inline">I am always happy to discuss my research
+    and explore potential collaborations, so please feel free to reach out if
+    our interests overlap.</span>
   </p>
 
-portrait_url: /assets/images/photos/myself2026.png
-portrait_caption: "Photo by Yaokun Liu."
+research_interests:
+  - title: Long-Horizon Agent Safety
+    description: "Safety drift and emerging risks in stateful, complex environments (e.g., computer-use agents)."
+    venues:
+      - label: "Preprint ’26"
+        publication_id: query-conditioned-attribution
+      - label: "EMNLP ’26"
+        publication_id: propuq-mas
+      - label: "ICML Workshop ’26"
+        publication_id: instruction-bleed
+  - title: Trustworthy ML
+    description: "Fairness, interpretability, uncertainty quantification, and performance trade-offs."
+    venues:
+      - label: "Preprint ’26"
+        publication_id: steering-tax
+      - label: "FAccT ’25"
+        publication_id: face-fairness
+      - label: "KBS ’25"
+        publication_id: media-bias-uncertainty
+      - label: "WWW ’25"
+        publication_id: mimoe-fnd
+      - label: "EMNLP ’26"
+        publication_id: propuq-mas
+  - title: LLM Post-Training
+    description: "Diverse post-training paradigms for capability enhancement, adaptation, and alignment."
+    venues:
+      - label: "SIGIR ’26"
+        publication_id: decor
+
+intern_note: "I am actively seeking U.S.-based research internship opportunities for Summer 2027 in areas related to agentic AI, AI safety, and trustworthy information retrieval."
+
+portrait_url: /assets/images/photos/myself2026-web.webp
 
 education:
   - name: University of Illinois Urbana-Champaign
@@ -61,7 +84,7 @@ experience:
     position: "Research Intern"
     logo: /assets/images/badges/ibm-logo-transparent.png
     location: "Yorktown Heights, NY, USA"
-    date: "May. 2026 – Aug. 2026"
+    date: "May 2026 – Aug 2026"
     topic: "Developing methods to attribute and explain actions in LLM-based agent systems, with a focus on safety and accountability."
 
 # awards:
@@ -90,7 +113,7 @@ service:
   - role: Reviewer
     venues:
       - ACM Web Conference 2025
-      - AAAI Conference on Artificial Intelligence 2026,2027
+      - AAAI Conference on Artificial Intelligence 2026, 2027
       - ACM SIGIR Conference 2026
       - Conference on Language Modeling (COLM) 2026
       - IEEE Transactions on Big Data
@@ -98,10 +121,10 @@ service:
 
 cats:
 - name: QiaoQiao
-  photo: /assets/images/cats/qiaoqiao.png
+  photo: /assets/images/cats/qiaoqiao-web.webp
 - name: XiangXiang
-  photo: /assets/images/cats/xiangxiang.png
+  photo: /assets/images/cats/xiangxiang-web.webp
 - name: Qiao & Xiang
-  photo: /assets/images/cats/QQXX.png
+  photo: /assets/images/cats/QQXX-web.webp
 - name: Qiao & Xiang
-  photo: /assets/images/cats/qqxx2.png
+  photo: /assets/images/cats/qqxx2-web.webp

@@ -6,167 +6,44 @@ title: Home
 {% assign P = site.data.profile %}
 
 <div class="main-narrow">
-
-  <style>
-    /* 默认（电脑/平板横屏）：左右布局 */
-    .hero-responsive {
-      display: flex;
-      align-items: flex-start;
-      gap: 2rem;
-    }
-
-    .profile-side {
-      flex: 0 0 205px;
-      text-align: center;
-    }
-
-    .profile-side .portrait-box {
-      margin: 0 auto .75rem;
-    }
-
-    .profile-side h1 {
-      font-size: 1.5rem;
-      line-height: 1.2;
-      margin: 0 0 .3rem;
-    }
-
-    .profile-side .contact {
-      font-size: .82rem;
-      overflow-wrap: anywhere;
-    }
-
-    .profile-side .links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: .45rem;
-      line-height: 1.35;
-      margin-top: .45rem;
-    }
-
-    .profile-side .icon-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 1.75rem;
-      height: 1.75rem;
-      color: #374151;
-      font-size: 1.2rem;
-      margin-right: 0;
-      text-decoration: none;
-      transition: color .15s ease, transform .15s ease;
-    }
-
-    .profile-side .icon-link:hover {
-      color: var(--link);
-      transform: translateY(-1px);
-      text-decoration: none;
-    }
-
-    /* 手机端（屏幕宽度小于 768px） */
-    @media (max-width: 768px) {
-      .hero-responsive {
-        flex-direction: column;  /* 垂直排列 */
-        align-items: flex-start; /* 【关键修改】让图片和整体容器靠左对齐 */
-      }
-
-      .profile-side {
-        width: 100%;
-        flex-basis: auto;
-        text-align: center;
-      }
-      
-      .hero-responsive .info {
-        width: 100%;
-        text-align: left; /* 【关键修改】让文字强制左对齐 */
-      }
-
-      /* 图片下方加点空隙 */
-      .portrait-box {
-        margin-bottom: 1rem;
-        /* 如果您想要“图片居中，但文字左对齐”，请把下面这行注释取消掉： */
-        /* margin-left: auto; margin-right: auto; align-self: center; */
-      }
-      
-      /* 链接那一排也左对齐 */
-      .links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start; /* 【关键修改】靠左对齐 */
-        gap: 0.5rem; /* 链接之间加一点小间距 */
-      }
-
-      .profile-side .links {
-        justify-content: center;
-      }
-    }
-  </style>
-
-  <link rel="icon" href="{{ '/assets/images/cats/qiaoqiao.png' | relative_url }}" type="image/png">
-  <link rel="shortcut icon" href="{{ '/assets/images/cats/qiaoqiao.png' | relative_url }}" type="image/png">
-
-  <section class="section hero hero-responsive">
-
-    <div class="profile-side">
+  <section class="section hero">
+    <div class="hero-primary">
       {% if P.portrait_url %}
         <div class="portrait-box">
-          <img src="{{ P.portrait_url | relative_url }}" alt="{{ P.primary_name }}">
+          <img src="{{ P.portrait_url | relative_url }}" alt="Portrait of {{ P.primary_name }}" width="168" height="168" fetchpriority="high" decoding="async">
           {% if P.portrait_caption %}
             <div class="portrait-caption">{{ P.portrait_caption }}</div>
           {% endif %}
         </div>
       {% endif %}
 
-      <h1>
-        {{ P.primary_name }}
-        {% if P.secondary_name %}
-          <span class="alt-name">{{ P.secondary_name }}</span>
-        {% endif %}
-      </h1>
+      <div class="hero-info">
+        <h1>
+          {{ P.primary_name }}
+          {% if P.secondary_name %}
+            <span class="alt-name">{{ P.secondary_name }}</span>
+          {% endif %}
+        </h1>
 
-      {% if P.email %}
-      <div class="contact muted">
-        {{ P.email | replace: "@"," [at] " | replace: "."," [dot] " }}
-      </div>
-      {% endif %}
+        <div class="profile-meta">
+          {% if P.email %}
+          <span class="contact muted">
+            {{ P.email | replace: "@"," [at] " | replace: "."," [dot] " }}
+          </span>
+          {% endif %}
 
-      <div class="links profile-links">
-        {% if P.linkedin %}
-          <a class="icon-link" href="{{ P.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-        {% endif %}
-        {% if P.github %}
-          <a class="icon-link" href="{{ P.github }}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
-        {% endif %}
-        {% if P.scholar %}
-          <a class="icon-link" href="{{ P.scholar }}" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
-            <i class="ai ai-google-scholar"></i>
-          </a>
-        {% endif %}
-        {% if P.orcid %}
-          <a class="icon-link" href="{{ P.orcid }}" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID">
-            <i class="ai ai-orcid"></i>
-          </a>
-        {% endif %}
-        {% if P.twitter %}
-          <a class="icon-link" href="{{ P.twitter }}" target="_blank" rel="noopener" aria-label="X" title="X">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-        {% endif %}
-        {% if P.cv_link %}
-          <a class="icon-link" href="{{ P.cv_link }}" target="_blank" rel="noopener" aria-label="CV" title="CV">
-            <i class="fa-solid fa-file-lines"></i>
-          </a>
-        {% endif %}
-      </div>
-    </div>
+          <div class="links profile-links">
+            {% if P.linkedin %}<a class="profile-link" href="{{ P.linkedin }}" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>{% endif %}
+            {% if P.github %}<a class="profile-link" href="{{ P.github }}" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>{% endif %}
+            {% if P.scholar %}<a class="profile-link" href="{{ P.scholar }}" target="_blank" rel="noopener"><i class="ai ai-google-scholar" aria-hidden="true"></i><span>Scholar</span></a>{% endif %}
+            {% if P.orcid %}<a class="profile-link" href="{{ P.orcid }}" target="_blank" rel="noopener"><i class="ai ai-orcid" aria-hidden="true"></i><span>ORCID</span></a>{% endif %}
+            {% if P.twitter %}<a class="profile-link" href="{{ P.twitter }}" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span>X</span></a>{% endif %}
+            {% if P.cv_link %}<a class="profile-link" href="{{ P.cv_link }}" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><span>CV</span></a>{% endif %}
+          </div>
+        </div>
 
-    <div class="info" style="flex:1;">
       {% if P.short_bio %}
-        <div class="lead" style="margin-top:0">
+        <div class="lead hero-bio">
           {{ P.short_bio }}
         </div>
       {% endif %}
@@ -181,10 +58,38 @@ title: Home
           {% endfor %}
         </div>
       {% endif %}
+      </div>
+    </div>
+
+    {% if P.research_interests %}
+    <div class="research-focus">
+      <div class="research-focus__heading">
+        <span>Research interests</span>
+      </div>
+      <ol class="research-interests">
+        {% for interest in P.research_interests %}
+        <li>
+          <strong>{{ interest.title }}</strong>
+          <p>{{ interest.description }}</p>
+          {% if interest.venues %}
+          <div class="research-evidence">
+            <div class="research-evidence__venues">
+              {% for venue in interest.venues %}<a href="#publication-{{ venue.publication_id }}">{{ venue.label }}</a>{% endfor %}
+            </div>
+          </div>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    {% endif %}
+
+    <div class="profile-notes">
+      {% if P.intern_note %}<p class="intern-search">{{ P.intern_note }}</p>{% endif %}
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="news">
     <h2>News</h2>
     <ul class="updates updates-scroll">
       {% for u in site.data.updates %}
@@ -194,7 +99,7 @@ title: Home
   </section>
 
   {% if P.experience and P.experience.size > 0 %}
-  <section class="section">
+  <section class="section" id="experience">
     <h2>Work Experience</h2>
     <ul class="edu-list">
       {% for e in P.experience %}
@@ -235,7 +140,7 @@ title: Home
 
   <section class="section" id="publications">
     <div class="publication-section-header">
-      <h2>Selected Publications</h2>
+      <h2>Publications</h2>
 
       <nav class="publication-filter" aria-label="Filter publications">
         <div class="publication-filter__buttons" role="group" aria-label="Publication authorship">
@@ -243,20 +148,19 @@ title: Home
             All <span class="publication-filter__count">{{ pubs_all.size }}</span>
           </button>
           <button type="button" class="publication-filter__button is-active" data-publication-filter="lead" aria-pressed="true">
-            First &amp; co-first authored <span class="publication-filter__count">{{ lead_pubs.size }}</span>
+            Lead-authored <span class="publication-filter__count">{{ lead_pubs.size }}</span>
           </button>
           <button type="button" class="publication-filter__button" data-publication-filter="collaboration" aria-pressed="false">
             Collaborations <span class="publication-filter__count">{{ collaboration_pubs.size }}</span>
           </button>
         </div>
       </nav>
-
     </div>
 
     <div class="publication-group publication-group--papers">
       <div data-publication-group>
       {% for p in pubs_all %}
-        <div class="publication-entry" data-author-role="{{ p.author_role }}"{% if p.author_role != 'lead' %} hidden{% endif %}>
+        <div class="publication-entry" id="publication-{{ p.id }}" data-author-role="{{ p.author_role }}"{% if p.author_role != 'lead' %} hidden{% endif %}>
           {% include widgets/pub_min_item.html item=p %}
         </div>
       {% endfor %}
@@ -268,9 +172,8 @@ title: Home
     </p>
   </section>
 
-
   {% if P.education %}
-  <section class="section">
+  <section class="section" id="education">
     <h2>Education</h2>
     <ul class="edu-list">
       {% for e in P.education %}
@@ -353,7 +256,7 @@ title: Home
       {% for c in P.cats %}
         <div class="cat-item">
           <div class="cat-photo">
-            <img src="{{ c.photo | relative_url }}" alt="{{ c.name }}">
+            <img src="{{ c.photo | relative_url }}" alt="{{ c.name }}" loading="lazy" decoding="async">
             <div class="cat-name">{{ c.name }}</div>
           </div>
         </div>
@@ -361,4 +264,5 @@ title: Home
     </div>
   </section>
   {% endif %}
+
 </div>

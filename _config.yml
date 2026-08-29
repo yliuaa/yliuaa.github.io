@@ -14,6 +14,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://yliuaa.github.io"
+title: "Yifan Liu"
+description: "Yifan Liu is a PhD student at UIUC researching long-horizon agent safety, trustworthy AI, and language-agent post-training."
+author: "Yifan Liu"
+lang: "en"
 
 # Build settings
 markdown: kramdown
